@@ -87,7 +87,7 @@
          }
 
         if (active_sentence_index + 1 === active_story.length) {
-            active_story_complete = true
+            active_story_complete = true;
             workflow_state = "COMPLETE"
         }
 
@@ -135,7 +135,7 @@
     <p>
     <strong>These are some instructions.</strong>
     <p>
-     <button on:click={startStoryAnnotation}>Start Story Annotation</button>
+     <button on:click={startStoryAnnotation}>Start</button>
 </p>
 </div>
 {/if}
@@ -149,12 +149,15 @@
 </div>
 <div id="sentence_buttons">
 
+{#if active_sentence_index > 0}
     <button on:click={sentenceBigDecrease}>Big Decrease</button>
     <button on:click={sentenceDecrease}>Decrease</button>
     <button on:click={sentenceSame}>Same</button>
     <button  on:click={sentenceIncrease}>Increase</button>
     <button on:click={sentenceBigIncrease}>Big Increase</button>
-
+{:else}
+      <button on:click={sentenceSame}>Next</button>
+{/if}
 </div>
 {/if}
 
