@@ -6,8 +6,8 @@
 	$: active_story_id = 1;
 	$: last_choice = 0;
 	$: active_story_complete = false;
-	$: story_started = false;
 	$: workflow_state = "INSTRUCTIONS";
+	$: show_annotations = true;
 
 	$: start_timer = new Date().getTime();
 
@@ -98,6 +98,9 @@
 
     }
 
+    function sentenceFirst() {
+        sentenceChoice(0)
+    }
     function sentenceBigDecrease() {
             sentenceChoice(1)
         }
@@ -156,7 +159,7 @@
     <button  on:click={sentenceIncrease}>Increase</button>
     <button on:click={sentenceBigIncrease}>Big Increase</button>
 {:else}
-      <button on:click={sentenceSame}>Next</button>
+      <button on:click={sentenceFirst}>Next</button>
 {/if}
 </div>
 {/if}
@@ -173,6 +176,7 @@
 
 <div id="annotation_results">
 
+{#if show_annotations}
 {#if $story_annotations.length > 0}
 <table>
   <tr>
@@ -194,6 +198,7 @@
   </tr>
   {/each}
 </table>
+{/if}
 {/if}
 
 </div>
