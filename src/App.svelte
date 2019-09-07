@@ -4,6 +4,9 @@
 
     $: valid_story = true;
 
+    let summaryQuestion = "";
+    let thoughtQuestion = "";
+
     let annotations_lookup = new Map();
     for (const s of annotations_source.stories) {
         console.log(s)
@@ -41,7 +44,7 @@
 
         if (active_sentence_index + 1 === active_story_sentences.length) {
             active_story_complete = true;
-            workflow_state = "COMPLETE"
+            workflow_state = "SUMMARY"
         }
 
         active_sentence_index = Math.min(active_sentence_index + 1, active_story_sentences.length - 1);
@@ -102,6 +105,10 @@
         }
     }
 
+    function submitStoryAnnotation() {
+        workflow_state = "COMPLETE";
+     }
+
     function handleKeydown(event) {
         if (workflow_state === "ANNOTATE") {
             if  (event.key === "a" || event.key === "A" ) {
@@ -121,11 +128,18 @@
                     undoAnnotation()
                 }
             }
+            else if  (event.key === "n" || event.key === "N") {
+                            sentenceFirst()
+                        }
             else if  (event.key === " ") {
                   sentenceSame()
             }
         }
 
+    }
+    function submitForm()
+    {
+      return false;
     }
 
 </script>
@@ -145,8 +159,7 @@
     <h2>Invalid Story</h2>
     <p>
     <strong>The story is not recognised. </strong>
-    <p>
-</p>
+
 </div>
 
 {:else if workflow_state === "INSTRUCTIONS"}
@@ -157,6 +170,23 @@
     <p>
      <button on:click={startStoryAnnotation}>Start</button>
 </p>
+</div>
+{:else if workflow_state === "SUMMARY"}
+<div id="sentence">
+    <h2>Summary</h2>
+    <p>
+    <h3>Please write a summary of the story in one or two sentences.</h3>
+    <form onsubmit="event.preventDefault(); return submitForm();">
+    <p>
+     <textarea rows = "3" cols = "100" name = "summary" id="summary" bind:value={summaryQuestion}></textarea>
+    <p>
+        <h3>Do you think the story is interesting or not? And why? One or two sentences.</h3>
+
+    <p>
+      <textarea rows = "3" cols = "100" name = "thoughts" id="thoughts" bind:value={thoughtQuestion}></textarea>
+    <p>
+     <button on:click={submitStoryAnnotation}>Submit</button>
+     </form>
 </div>
 {:else if workflow_state === "ANNOTATE"}
 
@@ -179,7 +209,7 @@
     {/if}
 
 {:else}
-      <button on:click={sentenceFirst}>Next</button>
+      <button on:click={sentenceFirst}>Next (N)</button>
 {/if}
 </div>
 
@@ -189,7 +219,6 @@
     <p>
     <strong>Story annotation complete. Link into MTurk with code, or link for new story to annotate.</strong>
     <p>
-</p>
 </div>
 {/if}
 
