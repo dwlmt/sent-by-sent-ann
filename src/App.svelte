@@ -1,9 +1,20 @@
 <script>
 
+    import annotations_source from '../static/annotations_source.json';
+
+    $: valid_story = true;
+
+    let annotations_lookup = new Map();
+    for (const s of annotations_source.stories) {
+        console.log(s)
+        annotations_lookup[String(s.story_id)] = s;
+    }
+
     import { writable } from 'svelte/store';
     export const story_annotations = writable([]);
 
-	$: active_story_id = 1;
+	$: active_story_id = -1//query_params["story_id"];
+	$: code = -1//; query_params["code"];
 	$: last_choice = 0;
 	$: active_story_complete = false;
 	$: workflow_state = "INSTRUCTIONS";
@@ -11,67 +22,9 @@
 
 	$: start_timer = new Date().getTime();
 
-	export let active_story = [
-    	 {
-          "sentence_id": 0,
-          "sentence_num": 1,
-          "sentence_text": "It was dark and Levi was pretty sure he was lying on his back ."
-        },
-         {
-              "sentence_id": 1,
-              "sentence_num": 2,
-              "sentence_text": "There was firelight flickering off of what was left of a ceiling ."
-            },
-          {
-               "sentence_id": 2,
-               "sentence_num": 3,
-               "sentence_text": "He could hear something but it was muffled ."
-             },
-
-          {
-               "sentence_id": 3,
-               "sentence_num": 4,
-               "sentence_text": "He was almost positive it was screaming ."
-             },
-
-           {
-                "sentence_id": 4,
-                "sentence_num": 5,
-                "sentence_text": "When he tried to move he felt an excruciating pain in his left side that caused him to cry out ."
-              },
-
-            {
-                 "sentence_id": 5,
-                 "sentence_num": 6,
-                 "sentence_text": "His hand moved to it instinctively and found something protruding from the wound ."
-               },
-
-            {
-                 "sentence_id": 6,
-                 "sentence_num": 7,
-                 "sentence_text": "It seemed to be a pipe of some kind ."
-               },
-
-          {
-               "sentence_id": 7,
-               "sentence_num": 8,
-               "sentence_text": "Levi &#39;s ears began ringing and the sounds began to become clearer , it felt quite a bit like some one was driving needles into his eardrums ."
-             },
-
-              {
-                   "sentence_id": 8,
-                   "sentence_num": 9,
-                   "sentence_text": "The sounds he was hearing were definitely screams and not just one person &#39;s , a lot of people were screaming or yelling ."
-                 },
-
-              {
-                   "sentence_id": 9,
-                   "sentence_num": 10,
-                   "sentence_text": "There was some one close to him that was crying ."
-                 },
-        ];
-        $: active_sentence_index = 0;
-        $: active_sentence = active_story[active_sentence_index];
+	$: active_story_sentences = [];
+    $: active_sentence_index = 0;
+    $: active_sentence = null;
 
     function sentenceChoice(choice) {
 
@@ -80,18 +33,19 @@
         let annotation_result_map = {"story_id": active_story_id, "suspense": choice, "duration_milliseconds": duration};
         annotation_result_map["sentence_num"] = active_sentence["sentence_num"];
         annotation_result_map["sentence_id"] = active_sentence["sentence_id"];
-        annotation_result_map["sentence_text"] = active_sentence["sentence_text"];
+        annotation_result_map["text"] = active_sentence["text"];
 
          if (active_story_complete === false) {
             story_annotations.update(n => n.concat([annotation_result_map]));
          }
 
-        if (active_sentence_index + 1 === active_story.length) {
+        if (active_sentence_index + 1 === active_story_sentences.length) {
             active_story_complete = true;
             workflow_state = "COMPLETE"
         }
 
-        active_sentence_index = Math.min(active_sentence_index + 1, active_story.length - 1);
+        active_sentence_index = Math.min(active_sentence_index + 1, active_story_sentences.length - 1);
+        active_sentence = active_story_sentences[active_sentence_index]
         last_choice = choice;
 
         start_timer = new Date().getTime();
@@ -117,22 +71,85 @@
          sentenceChoice(5)
     }
 
-    function startStoryAnnotation() {
-        workflow_state = "ANNOTATE";
-        start_timer = new Date().getTime();
+    function undoAnnotation() {
+         if (active_story_complete === false) {
+                    story_annotations.update(n => {
+                        active_sentence_index -= 1
+                        return n.slice(0, -1);
+                    })
+                 }
     }
 
+    function startStoryAnnotation() {
+        let query_params = new URLSearchParams(window.location.search);
+
+        active_story_id = query_params.get("story_id");
+
+        if (String(active_story_id) in annotations_lookup){
+            let story = annotations_lookup[active_story_id];
+            active_story_sentences = story["sentences"];
+            active_sentence = active_story_sentences[active_sentence_index];
+
+            let code = query_params.get("code");
+
+            if (code === story.code) {
+                workflow_state = "ANNOTATE";
+            } else {
+                workflow_state = "INVALID_STORY";
+            }
+
+            start_timer = new Date().getTime();
+        }
+    }
+
+    function handleKeydown(event) {
+        if (workflow_state === "ANNOTATE") {
+            if  (event.key === "a" || event.key === "A" ) {
+                sentenceBigDecrease()
+            }
+            else if  (event.key === "s" || event.key === "S") {
+                sentenceDecrease()
+            }
+            else if  (event.key === "k" || event.key === "K") {
+                sentenceIncrease()
+            }
+            else if  (event.key === "l" || event.key === "L") {
+                sentenceBigIncrease()
+            }
+            else if  (event.key === "u" || event.key === "U") {
+                if (active_sentence_index > 1) {
+                    undoAnnotation()
+                }
+            }
+            else if  (event.key === " ") {
+                  sentenceSame()
+            }
+        }
+
+    }
 
 </script>
 
 <style>
 
 </style>
+
+<svelte:window on:keydown={handleKeydown}/>
+
 <header>
 <h1>Story: {active_story_id} </h1>
 </header>
 
-{#if workflow_state === "INSTRUCTIONS"}
+{#if workflow_state === "INVALID_STORY"}
+<div id="sentence">
+    <h2>Invalid Story</h2>
+    <p>
+    <strong>The story is not recognised. </strong>
+    <p>
+</p>
+</div>
+
+{:else if workflow_state === "INSTRUCTIONS"}
 <div id="sentence">
     <h2>Instructions</h2>
     <p>
@@ -141,30 +158,32 @@
      <button on:click={startStoryAnnotation}>Start</button>
 </p>
 </div>
-{/if}
+{:else if workflow_state === "ANNOTATE"}
 
-{#if workflow_state === "ANNOTATE"}
 <div id="sentence">
-    <h3>{active_sentence["sentence_num"]} - {active_sentence["sentence_text"]}</h3>
+    <h3>{active_sentence["sentence_num"]} - {active_sentence["text"]}</h3>
     <p>
-    <strong>{active_sentence_index + 1}/{active_story.length}</strong>
+    <strong>{active_sentence_index + 1}/{active_story_sentences.length}</strong>
 </p>
 </div>
 <div id="sentence_buttons">
 
 {#if active_sentence_index > 0}
-    <button on:click={sentenceBigDecrease}>Big Decrease</button>
-    <button on:click={sentenceDecrease}>Decrease</button>
-    <button on:click={sentenceSame}>Same</button>
-    <button  on:click={sentenceIncrease}>Increase</button>
-    <button on:click={sentenceBigIncrease}>Big Increase</button>
+    <button on:click={sentenceBigDecrease}>Big Decrease (A)</button>
+    <button on:click={sentenceDecrease}>Decrease (S)</button>
+    <button on:click={sentenceSame}>Same (Space) </button>
+    <button  on:click={sentenceIncrease}>Increase (K)</button>
+    <button on:click={sentenceBigIncrease}>Big Increase (L)</button>
+    {#if active_sentence_index > 1}
+      <button on:click={undoAnnotation}>Undo (U)</button>
+    {/if}
+
 {:else}
       <button on:click={sentenceFirst}>Next</button>
 {/if}
 </div>
-{/if}
 
-{#if workflow_state === "COMPLETE"}
+{:else if workflow_state === "COMPLETE"}
 <div id="sentence">
     <h2>Thank you</h2>
     <p>
@@ -194,7 +213,7 @@
     <td>{ann["sentence_num"]}</td>
     <td>{ann["suspense"]}</td>
     <td>{ann["duration_milliseconds"]}</td>
-    <td>{ann["sentence_text"]}</td>
+    <td>{ann["text"]}</td>
   </tr>
   {/each}
 </table>
