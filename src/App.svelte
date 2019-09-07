@@ -106,6 +106,7 @@
     }
 
     function submitStoryAnnotation() {
+        
         workflow_state = "COMPLETE";
      }
 
