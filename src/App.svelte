@@ -146,8 +146,14 @@
 </script>
 
 <style>
-
 </style>
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+
 
 <svelte:window on:keydown={handleKeydown}/>
 
@@ -172,12 +178,12 @@
 <div id="sentence">
     <h2>Summary</h2>
     <p>
-    <h3>Please write a summary of the story in one or two sentences.</h3>
+    <h4>Please write a summary of the story in one or two sentences.</h4>
     <form onsubmit="event.preventDefault(); return submitForm();">
     <p>
      <textarea rows = "3" cols = "100" name = "summary" id="summary" bind:value={summaryQuestion}></textarea>
     <p>
-        <h3>Do you think the story is interesting or not? And why? One or two sentences.</h3>
+        <h4>Do you think the story is interesting or not? And why? One or two sentences.</h4>
 
     <p>
       <textarea rows = "3" cols = "100" name = "thoughts" id="thoughts" bind:value={thoughtQuestion}></textarea>
@@ -190,7 +196,7 @@
 <h1>Story: {active_story_id} </h1>
 
 <div id="sentence">
-    <h3>{active_sentence["sentence_num"]} - {active_sentence["text"]}</h3>
+    <h4>{active_sentence["text"]}</h4>
     <p>
     <strong>{active_sentence_index + 1}/{active_story_sentences.length}</strong>
 </p>
