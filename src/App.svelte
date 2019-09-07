@@ -106,7 +106,7 @@
     }
 
     function submitStoryAnnotation() {
-        
+
         workflow_state = "COMPLETE";
      }
 
@@ -151,10 +151,6 @@
 
 <svelte:window on:keydown={handleKeydown}/>
 
-<header>
-<h1>Story: {active_story_id} </h1>
-</header>
-
 {#if workflow_state === "INVALID_STORY"}
 <div id="sentence">
     <h2>Invalid Story</h2>
@@ -190,6 +186,8 @@
      </form>
 </div>
 {:else if workflow_state === "ANNOTATE"}
+
+<h1>Story: {active_story_id} </h1>
 
 <div id="sentence">
     <h3>{active_sentence["sentence_num"]} - {active_sentence["text"]}</h3>
