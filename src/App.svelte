@@ -3,6 +3,10 @@
 
 <script>
     import annotations_source from '../static/annotations_source.json';
+    import Notifications from '@beyonk/svelte-notifications'
+
+    let notifications;
+    let notification_time = 1000;
 
     import firebase from 'firebase/app';
     import 'firebase/auth';
@@ -84,22 +88,27 @@
     }
 
     function sentenceFirst() {
-        sentenceChoice(0)
+        sentenceChoice(0);
     }
     function sentenceBigDecrease() {
-            sentenceChoice(1)
+            sentenceChoice(1);
+            //notifications.info("Big Decrease", notification_time)
         }
     function sentenceDecrease() {
-            sentenceChoice(2)
+            sentenceChoice(2);
+            //notifications.info("Decrease", notification_time)
         }
     function sentenceSame() {
-        sentenceChoice(3)
+        sentenceChoice(3);
+        //notifications.info("Same", notification_time)
     }
     function sentenceIncrease() {
-        sentenceChoice(4)
+        sentenceChoice(4);
+        //notifications.info("Increase", notification_time)
     }
     function sentenceBigIncrease() {
-         sentenceChoice(5)
+         sentenceChoice(5);
+         //notifications.info("Big Increase", notification_time)
     }
 
     function undoAnnotation() {
@@ -246,6 +255,7 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
 
+<Notifications bind:this={notifications} />
 
 <svelte:window on:keydown={handleKeydown}/>
 
@@ -259,12 +269,19 @@
 
 {:else if workflow_state === "INSTRUCTIONS"}
 <div id="sentence">
+
     <h2>Instructions</h2>
+    <h3>Overview</h3>
+    <p>An overview of the task.</p>
+    <h3>Instructions</h3>
+    <p>Instructions including keyboard shortcuts.</p>
+    <h3>Examples</h3>
+    <p>The examples of the different suspense measures and summary questions.</p>
+
     <p>
-    <strong>These are some instructions.</strong>
-    <p>
-     <button on:click={startStoryAnnotation}>Start</button>
-</p>
+         <button on:click={startStoryAnnotation}>Start</button>
+    </p>
+
 </div>
 {:else if workflow_state === "SUMMARY"}
 <div id="sentence">
