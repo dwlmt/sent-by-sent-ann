@@ -1,16 +1,37 @@
-<script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
 
+<script>
     import annotations_source from '../static/annotations_source.json';
+
+    import firebase from 'firebase/app';
+    import 'firebase/auth';
+    import 'firebase/firestore';
+
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAKf2f2hZW0HUbtnGMxxEn0rjdAggKpBpw",
+        authDomain: "story-sent-by-sent-annotations.firebaseapp.com",
+        databaseURL: "https://story-sent-by-sent-annotations.firebaseio.com",
+        projectId: "story-sent-by-sent-annotations",
+        storageBucket: "",
+        messagingSenderId: "957227500629",
+        appId: "1:957227500629:web:8fad65731aa2e7370cc0dc"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+    let db = firebase.firestore();
 
     $: valid_story = true;
 
     let summary_question = "";
     let thought_question = "";
     let min_text_length = 30;
+    let rating_question = 0;
 
     let annotations_lookup = new Map();
     for (const s of annotations_source.stories) {
-        console.log(s)
         annotations_lookup[String(s.story_id)] = s;
     }
 
@@ -37,9 +58,10 @@
         let annotation_result_map = {"story_id": active_story_id, "suspense": choice, "duration_milliseconds": duration};
         annotation_result_map["sentence_num"] = active_sentence["sentence_num"];
         annotation_result_map["sentence_id"] = active_sentence["sentence_id"];
-        annotation_result_map["text"] = active_sentence["text"];
+        annotation_result_map["sentence_lengthoc"] = active_sentence["sentence_length"];
 
          if (active_story_complete === false) {
+             console.log(`Annotations: ${annotation_result_map}`)
             story_annotations.update(n => n.concat([annotation_result_map]));
          }
 
@@ -108,7 +130,20 @@
     }
 
     function submitStoryAnnotation() {
-        if (thought_question.length >= min_text_length && summary_question.length >= min_text_length){
+        if (thought_question.length >= min_text_length && summary_question.length >= min_text_length && rating_question > 0){
+            /*
+            db.collection("test_data").add({
+                first: "Ada",
+                last: "Lovelace",
+                born: 1815
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            });*/
+
             workflow_state = "COMPLETE";
         }
      }
@@ -190,8 +225,17 @@
 
     <p>
       <textarea rows = "3" cols = "100" name = "thoughts" id="thoughts" bind:value={thought_question}></textarea>
-    <p>
-     <button disabled={thought_question.length < min_text_length || summary_question.length < min_text_length} on:click={submitStoryAnnotation}>Submit</button>
+     <p>
+        <h4>How interesting is the story?</h4>
+     <p>
+     <label><input type=radio bind:group={rating_question} value={1}>1 - Very Uninteresting</label>
+     <label><input type=radio bind:group={rating_question} value={2}>2 - Uninteresting</label>
+     <label><input type=radio bind:group={rating_question} value={3}>3 - Okay</label>
+     <label><input type=radio bind:group={rating_question} value={4}>4 - Interesting</label>
+     <label><input type=radio bind:group={rating_question} value={5}>5 - Very Interesting</label>
+     <p>
+     <button disabled={thought_question.length < min_text_length || summary_question.length < min_text_length || rating_question === 0} on:click={submitStoryAnnotation}>Submit</button>
+
      </form>
 </div>
 {:else if workflow_state === "ANNOTATE"}
@@ -241,7 +285,6 @@
     <th>Sentence Num</th>
     <th>Suspense</th>
     <th>Duration Milliseconds</th>
-    <th>Sentence Text</th>
   </tr>
 {#each $story_annotations as ann}
 <tr>
@@ -250,7 +293,6 @@
     <td>{ann["sentence_num"]}</td>
     <td>{ann["suspense"]}</td>
     <td>{ann["duration_milliseconds"]}</td>
-    <td>{ann["text"]}</td>
   </tr>
   {/each}
 </table>
