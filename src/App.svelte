@@ -27,8 +27,12 @@
 
     let summary_question = "";
     let thought_question = "";
-    let min_text_length = 30;
+    let min_text_length = 25;
     let rating_question = 0;
+    let assignment_id = null;
+    let hit_id = null;
+    let turk_submit_to = null;
+    let worker_id = null;
 
     let annotations_lookup = new Map();
     for (const s of annotations_source.stories) {
@@ -38,14 +42,15 @@
     import { writable } from 'svelte/store';
     export const story_annotations = writable([]);
 
-	$: active_story_id = -1//query_params["story_id"];
-	$: code = -1//; query_params["code"];
+	$: active_story_id = -1
+	$: code = -1;
 	$: last_choice = 0;
 	$: active_story_complete = false;
 	$: workflow_state = "INSTRUCTIONS";
 	$: show_annotations = true;
 
 	$: start_timer = new Date().getTime();
+	$: whole_task_timer = new Date().getTime();
 
 	$: active_story_sentences = [];
     $: active_sentence_index = 0;
@@ -58,10 +63,10 @@
         let annotation_result_map = {"story_id": active_story_id, "suspense": choice, "duration_milliseconds": duration};
         annotation_result_map["sentence_num"] = active_sentence["sentence_num"];
         annotation_result_map["sentence_id"] = active_sentence["sentence_id"];
-        annotation_result_map["sentence_lengthoc"] = active_sentence["sentence_length"];
+        annotation_result_map["sentence_len"] = active_sentence["sentence_len"];
 
          if (active_story_complete === false) {
-             console.log(`Annotations: ${annotation_result_map}`)
+            console.log(`Annotations: ${annotation_result_map}`);
             story_annotations.update(n => n.concat([annotation_result_map]));
          }
 
@@ -107,6 +112,29 @@
                  }
     }
 
+    function post(path, params, method='post') {
+
+      // The rest of this code assumes you are not using a library.
+      // It can be made less wordy if you use one.
+      const form = document.createElement('form');
+      form.method = method;
+      form.action = path;
+
+      for (const key in params) {
+        if (params.hasOwnProperty(key)) {
+          const hiddenField = document.createElement('input');
+          hiddenField.type = 'hidden';
+          hiddenField.name = key;
+          hiddenField.value = params[key];
+
+          form.appendChild(hiddenField);
+        }
+      }
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+
     function startStoryAnnotation() {
         let query_params = new URLSearchParams(window.location.search);
 
@@ -125,26 +153,52 @@
                 workflow_state = "INVALID_STORY";
             }
 
+             assignment_id = query_params.get("assignmentId");
+             hit_id = query_params.get("hitId");
+             turk_submit_to = query_params.get("turkSubmitTo");
+             worker_id = query_params.get("workerId");
+
             start_timer = new Date().getTime();
+            whole_task_timer = new Date().getTime();
         }
     }
 
     function submitStoryAnnotation() {
         if (thought_question.length >= min_text_length && summary_question.length >= min_text_length && rating_question > 0){
-            /*
-            db.collection("test_data").add({
-                first: "Ada",
-                last: "Lovelace",
-                born: 1815
-            })
+
+            let comp_annotations = new Object();
+            comp_annotations["story_id"] = active_story_id;
+            comp_annotations["summary_question"] = summary_question;
+            comp_annotations["thought_question"] = thought_question;
+            comp_annotations["rating_question"] = rating_question;
+
+            if (assignment_id != null && assignment_id.length > 0) {
+                comp_annotations["assignment_id"] = assignment_id;
+            }
+            if (hit_id != null && hit_id.length > 0) {
+                comp_annotations["hit_id"] = hit_id;
+            }
+            if (worker_id != null && worker_id.length > 0) {
+                comp_annotations["worker_id"] = worker_id;
+            }
+            comp_annotations["sentence_annotations"] = $story_annotations;
+            comp_annotations["task_duration_milliseconds"] = new Date().getTime() - whole_task_timer;
+
+            console.log(comp_annotations);
+
+            db.collection("sentence_annotations_test").add(comp_annotations)
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
+
+                if (turk_submit_to != null && turk_submit_to.length > 0) {
+                    post(turk_submit_to, {assignmentId: assignment_id, docRefId: docRef.id});
+                } else {
+                    workflow_state = "COMPLETE";
+                }
             })
             .catch(function(error) {
                 console.error("Error adding document: ", error);
-            });*/
-
-            workflow_state = "COMPLETE";
+            });
         }
      }
 
@@ -217,7 +271,7 @@
     <h2>Summary</h2>
     <p>
     <h4>Please write a summary of the story in one or two sentences.</h4>
-    <form onsubmit="event.preventDefault(); return submitForm();">
+    <form onsubmit="event.preventDefault();">
     <p>
      <textarea rows = "3" cols = "100" name = "summary" id="summary" bind:value={summary_question}></textarea>
     <p>
@@ -269,7 +323,7 @@
 <div id="sentence">
     <h2>Thank you</h2>
     <p>
-    <strong>Story annotation complete. Link into MTurk with code, or link for new story to annotate.</strong>
+    <strong>Story annotation complete.</strong>
     <p>
 </div>
 {/if}
