@@ -78,6 +78,7 @@
          if (active_story_complete === false) {
                     story_annotations.update(n => {
                         active_sentence_index -= 1
+                        active_sentence = active_story_sentences[active_sentence_index];
                         return n.slice(0, -1);
                     })
                  }
