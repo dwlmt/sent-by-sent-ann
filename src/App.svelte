@@ -4,8 +4,9 @@
 
     $: valid_story = true;
 
-    let summaryQuestion = "";
-    let thoughtQuestion = "";
+    let summary_question = "";
+    let thought_question = "";
+    let min_text_length = 30;
 
     let annotations_lookup = new Map();
     for (const s of annotations_source.stories) {
@@ -107,8 +108,9 @@
     }
 
     function submitStoryAnnotation() {
-
-        workflow_state = "COMPLETE";
+        if (thought_question.length >= min_text_length && summary_question.length >= min_text_length){
+            workflow_state = "COMPLETE";
+        }
      }
 
     function handleKeydown(event) {
@@ -149,7 +151,7 @@
 <style>
 </style>
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:min_text_length0,min_text_length0italic,700,700italic">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
 
@@ -182,14 +184,14 @@
     <h4>Please write a summary of the story in one or two sentences.</h4>
     <form onsubmit="event.preventDefault(); return submitForm();">
     <p>
-     <textarea rows = "3" cols = "100" name = "summary" id="summary" bind:value={summaryQuestion}></textarea>
+     <textarea rows = "3" cols = "100" name = "summary" id="summary" bind:value={summary_question}></textarea>
     <p>
         <h4>Do you think the story is interesting or not? And why? One or two sentences.</h4>
 
     <p>
-      <textarea rows = "3" cols = "100" name = "thoughts" id="thoughts" bind:value={thoughtQuestion}></textarea>
+      <textarea rows = "3" cols = "100" name = "thoughts" id="thoughts" bind:value={thought_question}></textarea>
     <p>
-     <button on:click={submitStoryAnnotation}>Submit</button>
+     <button disabled={thought_question.length < min_text_length || summary_question.length < min_text_length} on:click={submitStoryAnnotation}>Submit</button>
      </form>
 </div>
 {:else if workflow_state === "ANNOTATE"}
