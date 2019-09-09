@@ -1,12 +1,4 @@
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
 <script>
-    import annotations_source from '../static/annotations_source.json';
-    import Notifications from '@beyonk/svelte-notifications'
-
-    let notifications;
-    let notification_time = 1000;
 
     import firebase from 'firebase/app';
     import 'firebase/auth';
@@ -92,23 +84,23 @@
     }
     function sentenceBigDecrease() {
             sentenceChoice(1);
-            //notifications.info("Big Decrease", notification_time)
+
         }
     function sentenceDecrease() {
             sentenceChoice(2);
-            //notifications.info("Decrease", notification_time)
+
         }
     function sentenceSame() {
         sentenceChoice(3);
-        //notifications.info("Same", notification_time)
+
     }
     function sentenceIncrease() {
         sentenceChoice(4);
-        //notifications.info("Increase", notification_time)
+
     }
     function sentenceBigIncrease() {
          sentenceChoice(5);
-         //notifications.info("Big Increase", notification_time)
+
     }
 
     function undoAnnotation() {
@@ -250,12 +242,8 @@
 </style>
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:min_text_length0,min_text_length0italic,700,700italic">
-
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
-
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
-
-<Notifications bind:this={notifications} />
 
 <svelte:window on:keydown={handleKeydown}/>
 
