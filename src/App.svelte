@@ -1,4 +1,5 @@
 <script>
+    import annotations_source from '../static/annotations_source.json';
 
     import firebase from 'firebase/app';
     import 'firebase/auth';
@@ -242,7 +243,9 @@
 </style>
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:min_text_length0,min_text_length0italic,700,700italic">
+
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
 
 <svelte:window on:keydown={handleKeydown}/>
