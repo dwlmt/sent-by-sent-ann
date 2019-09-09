@@ -261,17 +261,158 @@
 {:else if workflow_state === "INSTRUCTIONS"}
 <div id="sentence">
 
+      <button on:click={startStoryAnnotation}>Start</button>
+
     <h2>Instructions</h2>
     <h3>Overview</h3>
-    <p>An overview of the task.</p>
-    <h3>Instructions</h3>
-    <p>Instructions including keyboard shortcuts.</p>
-    <h3>Examples</h3>
-    <p>The examples of the different suspense measures and summary questions.</p>
+    <h4>Sentence by Sentence</h4>
+    <p>The main goal of this research is to understand how people read stories and how interest and dramatic tension change over the course of the story.
+    You will read a short story on a variety of themes and for each sentence be asked to assess how the drama, interest, suspense or tension increase, decrease or stays the same.
+    These are all closely relate concepts. The drama or tension in a story can change moment to moment so you will be asked to rate how this changes from sentence to sentence. Each story will take an estimated
+    <emph>x-y minutes.</emph>. You are allowed to complete multiple HITS and assignments if they are not for the same story.</p>
 
-    <p>
-         <button on:click={startStoryAnnotation}>Start</button>
+    <p>Judge each increase or decrease on:</p>
+        <ul>
+          <li><strong>Curiousity:</strong> How curious are you about what happens next. Or you know what is likely to happen but are interested to know how.</li>
+          <li><strong>Emotion</strong> A state or feeling of excited or anxious uncertainty about what may happen in the story or concern over a character.</li>
+          <li><strong>Uncertainty:</strong> How uncertain you are over what will happen. </li>
+          <li><strong>Interest:</strong> Is this the change more or less central to the plot. Does it affect a goal of a major character, threaten them in some way, or exciting for them.</li>
+          <li><strong>Intensity:</strong> How much intensity is there in the events or situation described. The general change in tension.</li>
+        </ul>
+    <ul>
+    <p>The overall judgement will be a balance of all of these. There is no need to think too long about each sentence. Read each one and choose based on your overall impression.
+    Keyboard shortcuts are shown in brackets and will enable you to speed up the annotation process. Overall you are recording the differences as you read each sentence in expectations and not the absolute level.
     </p>
+      <li><strong>Big Decrease (A):</strong> A sudden dramatic decrease in the situation. This may happen when there is tension in the situation and it is suddenly resolved, or something important was suggested
+      in the story and it turns out to be nothing.</li>
+      <li><strong>Decrease (S):</strong> A slow decrease in the level of tension. Not a sudden resolution but a more gradual drop.</li>
+      <li><strong>Same (Space):</strong> Stays at a similar level. This will happen often when there is a conversation that stays on the same level of importance or topic or continuing description.</li>
+      <li><strong>Increase (K):</strong> A gradual increase in the tension. This could be something such as an conversation that is increasing in intensity, becoming more romantic or a heated argument.
+      Some opportunity or threat
+      Something </li>
+      <li><strong>Big Increase (L):</strong> A more sudden dramatic increase such as an argument, violence, sudden unexpected appearance of a character in dramatic circumstances, a love moment.
+      The main thing is that the change is more sudden from the previous sentence.</li>
+       </ul>
+    <h4>Review Questions</h4>
+    <p>At the end are a review questions to assess the story overall:</p>
+    <ul>
+      <li><strong>Summary: </strong> Write a short one or two sentence summary of what the story is about. This should mention the main character(s),
+      plot points, goals or obstacles that the characters overcame in the story.</li>
+      <li><strong>Review:</strong> Write a couple of sentences reviewing the story saying what you like or don't like about it and why. For either mention if it is the topic, characters, action,
+       tension etc that draw you into the story or find boring.</li>
+      <li><strong>Rating:</strong> A 5 point scale from very uninteresting to very interesting. Just go with your own judgement.</li>
+    </ul>
+    <h3>Examples</h3>
+    <p>These are some examples of the sentence to sentence annotation categories and expected response.
+    These judgements are subjective and so are guidence. They only show the previous sentence but really it is the story
+    up to that point that you are judging the story from.</p>
+
+    <table>
+      <tr>
+        <th><span style="font-weight:bold">Category</span></th>
+        <th><span style="font-weight:bold">Context</span></th>
+        <th><span style="font-weight:bold">Transition</span></th>
+        <th><span style="font-weight:bold">Reason</span></th>
+      </tr>
+      <tr>
+        <td><strong>Big Decrease (A):</strong></td>
+        <td>Holy shit , Mulder , is that a giant tentacle ?</td>
+        <td>I'm pretty sure that the Loch Ness monster doesn't have tentacles.</td>
+        <td>Refrain takes the drama out of the situation with skeptical note. Follows highly animated conversation.</td>
+      </tr>
+      <tr>
+              <td><strong>Big Decrease (A):</strong></td>
+              <td>As the pain faded away and she felt very tired , she sank back so that her upper body was hanging over the rail .</td>
+              <td>Her last look was towards the grey sky , where the last snow began to fall .</td>
+              <td>Follows and closes of a violent murder scene and so hugley reduces the tension.</td>
+            </tr>
+       <tr>
+              <td><strong>Decrease (S):</strong></td>
+              <td>No more mercenary bullshit for me .</td>
+              <td>Just teaching.</td>
+              <td>Stepping down the tension.</td>
+            </tr>
+      <tr>
+        <td><strong>Decrease (S):</strong></td>
+        <td>I assume they just thought it was funny .</td>
+        <td>I guess this happens , when you let the internet decide on things .</td>
+        <td>Not a big change but closes off the topic.</td>
+      </tr>
+
+       <tr>
+            <td><strong>Same (Space):</strong></td>
+            <td>
+               The two men sit , Rob chatting away , Clancy forcing out pleasantries .
+            </td>
+            <td>
+              They pass Rob 's rations between them .
+            </td>
+            <td>
+                A continuation of an action but doesn't change the intensity.
+            </td>
+    </tr>
+     <tr>
+                <td><strong>Same (Space):</strong></td>
+                <td>
+                   It was the bartender , of course .
+                </td>
+                <td>
+                  A short , stubby little man with a shaved head but by no means a shaved face .
+                </td>
+                <td>
+                    Carrying onto a natural description of the Bartender but not changing the Drama of the Story.
+                </td>
+        </tr>
+     <tr>
+    <td><strong>Increase (K):</strong></td>
+   <td>
+       Clancy Marguerian , 154 , private first class of the 150 + army , sits in his foxhole .
+       </td>
+       <td>
+           Tired cold , wet and hungry , the only thing preventing him from laying down his rifle and walking towards the enemy lines in surrender is the knowledge that however bad he has it here , life as a 50 - 100 POW is surely much worse .
+       </td>
+       <td>
+           Mentioning the POW Camp and surrending increase the tension but it is an incremental and not a sudden change.
+       </td>
+  </tr>
+
+   <tr>
+      <td><strong>Increase (K):</strong></td>
+     <td>
+         A painting of modest beauty but exquisite detail .
+         </td>
+         <td>
+             Inside , however , lies a drawing soaked in black ink and torn to shreds .
+         </td>
+         <td>
+             Descriptive, but the emotive language raises the tension and asks questions about what the drawing may be.
+         </td>
+    </tr>
+   <tr>
+      <td><strong>Big Increase (L):</strong></td>
+      <td>
+            The man 's uniform is tan , he must be a 50 - 100 .
+      </td>
+      <td>
+          The two men snarl and grab at each other , grappling in the small foxhole .
+      </td>
+      <td>
+          There is a sudden escalation from describing a man appearing to a fight.
+      </td>
+    </tr>
+    <tr>
+          <td><strong>Big Increase (L):</strong></td>
+          <td>
+                When the bunny finally tired out and became complacent , Susie Cutie slowly reached up , with a lifetime of anticipation bursting in her heart , and patted her hand between the bunny 's ears .
+          </td>
+          <td>
+              Smiling , Susan twisted the rabbit 's head sharply , killing it , then flipped it over to examine that cute , cute bunny tail up close .
+          </td>
+          <td>
+              The build talks about love for Rabbits and so this sentence is a big break from what is expected.
+          </td>
+        </tr>
+    </table>
 
 </div>
 {:else if workflow_state === "SUMMARY"}
