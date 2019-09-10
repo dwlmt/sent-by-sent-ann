@@ -114,32 +114,30 @@
                  }
     }
 
-    function post(path, params, method='post') {
+    function post(path, params) {
 
-      // The rest of this code assumes you are not using a library.
-      // It can be made less wordy if you use one.
-      const form = document.createElement('form');
-      form.method = method;
-      form.action = path;
+      let XHR = new XMLHttpRequest();
+      let FD  = new FormData();
 
-      for (const key in params) {
-        if (params.hasOwnProperty(key)) {
-          const hiddenField = document.createElement('input');
-          hiddenField.type = 'hidden';
-          hiddenField.name = key;
-          hiddenField.value = params[key];
+        // Push our data into our FormData object
+        for (const key in params) {
+                if (params.hasOwnProperty(key)) {
 
-          form.appendChild(hiddenField);
-        }
-      }
+                  FD.append(key, params[key]);
 
-      document.body.appendChild(form);
-      form.submit();
+                }
+              }
+
+        // Set up our request
+        XHR.open('POST', path);
+
+        // Send our FormData object; HTTP headers are set automatically
+        XHR.send(FD);
+
     }
 
     function startStoryAnnotation() {
         let query_params = new URLSearchParams(window.location.search);
-        console.log("Query params", query_params)
 
         active_story_id = query_params.get("story_id");
 
@@ -150,7 +148,7 @@
 
             let code = query_params.get("code");
 
-            if (code === story.code || true == true) {
+            if (code === story.code || true === true) {
                 workflow_state = "ANNOTATE";
             } else {
                 workflow_state = "INVALID_STORY";
@@ -160,6 +158,8 @@
              hit_id = query_params.get("hitId");
              turk_submit_to = query_params.get("turkSubmitTo");
              worker_id = query_params.get("workerId");
+
+            console.log("Query params", active_story_id, code, assignment_id, hit_id, turk_submit_to, worker_id);
 
             start_timer = new Date().getTime();
             whole_task_timer = new Date().getTime();
