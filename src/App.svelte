@@ -140,9 +140,6 @@
 
         let mturk_code = query_params.get("mturkCode");
 
-        let active_story_id;
-        let code;
-
         if (mturk_code != null && mturk_code.length > 0)     {
             let split_params = mturk_code.split("-");
             active_story_id = split_params[0];
