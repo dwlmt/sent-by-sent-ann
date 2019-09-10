@@ -137,7 +137,6 @@
 
     function startStoryAnnotation() {
         let query_params = new URLSearchParams(window.location.search);
-        console.log("Query params", query_params)
 
         let mturk_code = query_params.get("mturkCode");
 
@@ -145,7 +144,7 @@
         let code;
 
         if (mturk_code != null && mturk_code.length > 0)     {
-            split_params = mturk_code.split("-");
+            let split_params = mturk_code.split("-");
             active_story_id = split_params[0];
             code = split_params[1];
         } else {
