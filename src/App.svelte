@@ -139,13 +139,13 @@
         let query_params = new URLSearchParams(window.location.search);
         console.log("Query params", query_params)
 
-        let mturk_code = query_params.get("mturk_code");
+        let mturk_code = query_params.get("mturkCode");
 
         let active_story_id = query_params.get("story_id");
         let code = query_params.get("code");
 
         if (mturk_code != null && mturk_code.length > 0)     {
-            let [active_story_id, code] =  mturk_code.split("-");
+            [active_story_id, code] =  mturk_code.split("-");
         }
 
         if (String(active_story_id) in annotations_lookup){
