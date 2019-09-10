@@ -121,12 +121,8 @@
 
         // Push our data into our FormData object
         for (const key in params) {
-                if (params.hasOwnProperty(key)) {
-
-                  FD.append(key, params[key]);
-
-                }
-              }
+          FD.append(key, params[key]);
+        }
 
         // Set up our request
         XHR.open('POST', path);
@@ -195,7 +191,7 @@
 
                 if (turk_submit_to != null && turk_submit_to.length > 0) {
                     console.log(turk_submit_to, assignment_id, docRef.id);
-                    post(turk_submit_to + "/mturk/externalSubmit", {assignmentId: assignment_id, docRefId: docRef.id});
+                    post(turk_submit_to + "/mturk/externalSubmit", {"assignmentId": assignment_id, "docRefId": docRef.id});
                 } else {
                     workflow_state = "COMPLETE";
                 }
