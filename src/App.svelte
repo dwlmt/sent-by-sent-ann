@@ -141,11 +141,16 @@
 
         let mturk_code = query_params.get("mturkCode");
 
-        let active_story_id = query_params.get("story_id");
-        let code = query_params.get("code");
+        let active_story_id;
+        let code;
 
         if (mturk_code != null && mturk_code.length > 0)     {
-            [active_story_id, code] =  mturk_code.split("-");
+            split_params = mturk_code.split("-");
+            active_story_id = split_params[0];
+            code = split_params[1];
+        } else {
+             active_story_id = query_params.get("story_id");
+             code = query_params.get("code");
         }
 
         if (String(active_story_id) in annotations_lookup){
