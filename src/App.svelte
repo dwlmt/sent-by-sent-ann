@@ -19,6 +19,7 @@
       firebase.initializeApp(firebaseConfig);
 
     let db = firebase.firestore();
+    let db_collection = "sentence_annotations_sandbox";
 
     $: valid_story = true;
 
@@ -193,13 +194,13 @@
 
             console.log(comp_annotations);
 
-            db.collection("sentence_annotations_test").add(comp_annotations)
+            db.collection(db_collection).add(comp_annotations)
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
 
                 if (turk_submit_to != null && turk_submit_to.length > 0) {
                     console.log(turk_submit_to, assignment_id, docRef.id);
-                    post(turk_submit_to, "/mturk/externalSubmit", {"assignmentId": assignment_id, "docRefId": docRef.id});
+                    post(turk_submit_to, "/mturk/externalSubmit", {"assignmentId": assignment_id, "docRefId": docRef.id, "collection": db_collection});
                 } else {
                     workflow_state = "COMPLETE";
                 }
