@@ -44,7 +44,7 @@
 	$: last_choice = 0;
 	$: active_story_complete = false;
 	$: workflow_state = "INSTRUCTIONS";
-	$: show_annotations = true;
+	$: show_annotations = false;
 
 	$: start_timer = new Date().getTime();
 	$: whole_task_timer = new Date().getTime();
@@ -139,6 +139,7 @@
 
     function startStoryAnnotation() {
         let query_params = new URLSearchParams(window.location.search);
+        console.log("Query params", query_params)
 
         active_story_id = query_params.get("story_id");
 
@@ -193,7 +194,7 @@
                 console.log("Document written with ID: ", docRef.id);
 
                 if (turk_submit_to != null && turk_submit_to.length > 0) {
-                    console.log(turk_submit_to, assignment_id, docRef.id)
+                    console.log(turk_submit_to, assignment_id, docRef.id);
                     post(turk_submit_to, {assignmentId: assignment_id, docRefId: docRef.id});
                 } else {
                     workflow_state = "COMPLETE";
