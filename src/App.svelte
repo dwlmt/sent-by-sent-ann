@@ -56,7 +56,7 @@
     $: active_sentence_index = 0;
     $: active_sentence = null;
 
-    function sentenceChoice(choice) {
+    function sentenceChoice(choice, interaction_type="button") {
 
         let duration = new Date().getTime() - start_timer;
 
@@ -66,6 +66,7 @@
             annotation_result_map["sentence_num"] = active_sentence["sentence_num"];
             annotation_result_map["sentence_id"] = active_sentence["sentence_id"];
             annotation_result_map["sentence_len"] = active_sentence["sentence_len"];
+            annotation_result_map["interaction_type"] = interaction_type;
 
              if (active_story_complete === false) {
                 console.log(`Annotations: ${annotation_result_map}`);
@@ -83,30 +84,6 @@
 
             start_timer = new Date().getTime();
         }
-
-    }
-
-    function sentenceFirst() {
-        sentenceChoice(0);
-    }
-    function sentenceBigDecrease() {
-            sentenceChoice(1);
-
-        }
-    function sentenceDecrease() {
-            sentenceChoice(2);
-
-        }
-    function sentenceSame() {
-        sentenceChoice(3);
-
-    }
-    function sentenceIncrease() {
-        sentenceChoice(4);
-
-    }
-    function sentenceBigIncrease() {
-         sentenceChoice(5);
 
     }
 
@@ -226,16 +203,16 @@
     function handleKey(event) {
         if (workflow_state === "ANNOTATE") {
             if  (event.key === "a" || event.key === "A" ) {
-                sentenceBigDecrease()
+                sentenceChoice(1,"key")
             }
             else if  (event.key === "s" || event.key === "S") {
-                sentenceDecrease()
+                sentenceChoice(2,"key")
             }
             else if  (event.key === "k" || event.key === "K") {
-                sentenceIncrease()
+                sentenceChoice(4,"key")
             }
             else if  (event.key === "l" || event.key === "L") {
-                sentenceBigIncrease()
+                sentenceChoice(5,"key")
             }
             else if  (event.key === "u" || event.key === "U") {
                 if (active_sentence_index > 1) {
@@ -243,10 +220,10 @@
                 }
             }
             else if  (event.key === "n" || event.key === "N") {
-                            sentenceFirst()
+                sentenceChoice(0,"key")
                         }
             else if  (event.key === " ") {
-                  sentenceSame()
+                  sentenceChoice(3,"key")
             }
         }
 
@@ -474,17 +451,17 @@
 <div id="sentence_buttons">
 
 {#if active_sentence_index > 0}
-    <button on:click={sentenceBigDecrease}>Big Decrease (A)</button>
-    <button on:click={sentenceDecrease}>Decrease (S)</button>
-    <button on:click={sentenceSame}>Same (Space) </button>
-    <button  on:click={sentenceIncrease}>Increase (K)</button>
-    <button on:click={sentenceBigIncrease}>Big Increase (L)</button>
+    <button on:click={()=>sentenceChoice(1,"button")}>Big Decrease (A)</button>
+    <button on:click={()=>sentenceChoice(2,"button")}>Decrease (S)</button>
+    <button on:click={()=>sentenceChoice(3,"button")}>Same (Space) </button>
+    <button  on:click={()=>sentenceChoice(4,"button")}>Increase (K)</button>
+    <button on:click={()=>sentenceChoice(5,"button")}>Big Increase (L)</button>
     {#if active_sentence_index > 1}
       <button on:click={undoAnnotation}>Undo (U)</button>
     {/if}
 
 {:else}
-      <button on:click={sentenceFirst}>Next (N)</button>
+      <button on:click={()=>sentenceChoice(0,"button")}>Next (N)</button>
 {/if}
 </div>
 
