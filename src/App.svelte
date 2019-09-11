@@ -314,189 +314,115 @@
     </ul>
     <h3>Examples</h3>
     <p>These are some examples of the sentence to sentence annotations for stories. Each table is a separate story and the answer that would be expected.
-    Remember that it is the relative change that is being recorded rather than the absolute tension.</p>
+    Remember that it is the relative change that is being recorded rather than the absolute tension. The below stories are guidelines there is some subjectivity but
+    interpret the stories as you see most appropriate from the criteria above.</p>
+
+    <p>This judgement is only possible retrospectively but is an explanation for the below. There are two major peaks in the below. The tension rises dramatically with the confrontation
+    at the beginning Clancy is under threat from an enemy. The tension gradually decreases as they realise they know each other and talk about no more being enemies. Then there is a sudden
+    increase at the end when Clancy kills Rob at the end, but prior to this there a couple of small suggestions that are increasing the tension as they start talking about terroist groups and
+     the war again in a way that suggests that something isn't right and suggests confrontation.</p>
 
     <table>
     <tr><th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
     <tr><td>NA</td><td>0</td><td>Clancy Marguerian , 154 , private first class of the 150 + army , sits in his foxhole .</td></tr>
-    <tr><td></td><td>1</td><td>Tired cold , wet and hungry , the only thing preventing him from laying down his rifle and walking towards the enemy lines in surrender is the knowledge that however bad he has it here , life as a 50 - 100 POW is surely much worse .</td></tr>
-    <tr><td></td><td>2</td><td>He &#39;s fighting to keep his eyes open and his rifle ready when the mortar shells start landing near him .</td></tr>
-    <tr><td></td><td>3</td><td>He hunkers lower .</td></tr>
-    <tr><td></td><td>4</td><td>After a few minutes under the barrage , Marguerian hears hurried footsteps , a grunt , and a thud as a soldier leaps into the foxhole .</td></tr>
-    <tr><td></td><td>5</td><td>The man &#39;s uniform is tan , he must be a 50 - 100 .</td></tr>
-    <tr><td></td><td>6</td><td>The two men snarl and grab at eachother , grappling in the small foxhole .</td></tr>
-    <tr><td></td><td>7</td><td>Abruptly , their faces come together .</td></tr>
-    <tr><td></td><td>8</td><td>`` Clancy ? &#39;&#39;</td></tr>
-    <tr><td></td><td>9</td><td>`` Rob ? &#39;&#39;</td></tr>
-    <tr><td></td><td>10</td><td>Rob Hall , 97 , Corporal in the 50 - 100 army grins , as the situation turns from life or death struggle , to a meeting of two college friends .</td></tr>
-    <tr><td></td><td>11</td><td>He lets go of Marguerian &#39;s collar .</td></tr>
-    <tr><td></td><td>12</td><td>`` Holy shit Clancy , you &#39;re the last person I expected to see here &#39;&#39;</td></tr>
-    <tr><td></td><td>13</td><td>`` Yeah &#39;&#39; `` Shit man , I did n&#39;t think I &#39;d ever see &#39;</td></tr>
-    <tr><td></td><td>14</td><td>Mr .</td></tr>
-    <tr><td></td><td>15</td><td>volunteers every saturday morning at the food shelf &#39; , not after The Reorganization at least &#39;&#39;</td></tr>
-    <tr><td></td><td>16</td><td>``</td></tr>
-    <tr><td></td><td>17</td><td>Yeah Rob , it is something is n&#39;t it &#39;&#39;</td></tr>
-    <tr><td></td><td>18</td><td>`` Man , I &#39; m sorry</td></tr>
-    <tr><td></td><td>19</td><td>I tried to kill you there ,</td></tr>
-    <tr><td></td><td>20</td><td>hey , I heard you guys were out of food , here , you can share my dinner &#39;&#39; Clancy marvels , even after all this : The Reorganization , the coalitions , the war , Rob is still his old , chatty self .</td></tr>
-    <tr><td></td><td>21</td><td>The two men sit , Rob chatting away , Clancy forcing out pleasantries .</td></tr>
-    <tr><td></td><td>22</td><td>They pass Rob &#39;s rations between them .</td></tr>
-    <tr><td></td><td>23</td><td>`` Clancy my man , I heard a group of terrorist 5 &#39;s took have formed some kind of cult , and they &#39;re rallying all the &lt; 50 in their own coalition &#39;&#39;</td></tr>
-    <tr><td></td><td>24</td><td>`` Oh yeah ? &#39;&#39;</td></tr>
-    <tr><td></td><td>25</td><td>`` Yeah , I mean , that sucks and everything , cause those are some scary dudes , but I heard that there &#39;s going to be a truce between our countries in a few days , why do n&#39;t we just hang out here , pretty soon we wo n&#39;t even be enemies anymore ! &#39;&#39;</td></tr>
-    <tr><td></td><td>26</td><td>`` Yeah , Rob , that sounds like a plan &#39;&#39;</td></tr>
-    <tr><td></td><td>27</td><td>`` Man , I &#39; m so glad I found you again , in a few days , this war will be over , and things will be cool between us and , hey , remember Sarah ?</td></tr>
-    <tr><td></td><td>28</td><td>I heard she &#39;s a 151 , maybe I &#39;ll look her up , I &#39;ll be sure to visit you too once I can get a pass to sector 150 - 155 , it &#39;ll probably be tough though , even before the war</td></tr>
-    <tr><td></td><td>29</td><td>, you had to do sooo much paperwork to be allowed to visit , I wonder if passes will even be reinstated after the truce ends , hey , did I ever tell you about the time ... &#39;&#39;</td></tr>
-    <tr><td></td><td>30</td><td>Rob babbles as he dozes off , grinning up at Clancy .</td></tr>
-    <tr><td></td><td>31</td><td>When Clancy is sure that his friend is asleep , he slits Rob &#39;s throat with his bayonet .</td></tr>
-    <tr><td></td><td>32</td><td>Clancy climbs out of the foxhole , and stumbles his way back to battalion HQ .</td></tr></table>
+    <tr><td>Increase</td><td>1</td><td>Tired cold , wet and hungry , the only thing preventing him from laying down his rifle and walking towards the enemy lines in surrender is the knowledge that however bad he has it here , life as a 50 - 100 POW is surely much worse .</td></tr>
+    <tr><td>Increase</td><td>2</td><td>He &#39;s fighting to keep his eyes open and his rifle ready when the mortar shells start landing near him .</td></tr>
+    <tr><td>Same</td><td>3</td><td>He hunkers lower .</td></tr>
+    <tr><td>Increase</td><td>4</td><td>After a few minutes under the barrage , Marguerian hears hurried footsteps , a grunt , and a thud as a soldier leaps into the foxhole .</td></tr>
+    <tr><td>Same</td><td>5</td><td>The man &#39;s uniform is tan , he must be a 50 - 100 .</td></tr>
+    <tr><td>Big Increase</td><td>6</td><td>The two men snarl and grab at eachother , grappling in the small foxhole .</td></tr>
+    <tr><td>Same</td><td>7</td><td>Abruptly , their faces come together .</td></tr>
+    <tr><td>Decrease</td><td>8</td><td>`` Clancy ? &#39;&#39;</td></tr>
+    <tr><td>Decrease</td><td>9</td><td>`` Rob ? &#39;&#39;</td></tr>
+    <tr><td>Big Decrease</td><td>10</td><td>Rob Hall , 97 , Corporal in the 50 - 100 army grins , as the situation turns from life or death struggle , to a meeting of two college friends .</td></tr>
+    <tr><td>Decrease</td><td>11</td><td>He lets go of Marguerian &#39;s collar .</td></tr>
+    <tr><td>Same</td><td>12</td><td>`` Holy shit Clancy , you &#39;re the last person I expected to see here &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>13</td><td>`` Yeah &#39;&#39; `` Shit man , I did n&#39;t think I &#39;d ever see &#39;</td></tr>
+    <tr><td>Same</td><td>14</td><td>Mr .</td></tr>
+    <tr><td>Decrease</td><td>15</td><td>volunteers every saturday morning at the food shelf &#39; , not after The Reorganization at least &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>17</td><td>Yeah Rob , it is something is n&#39;t it &#39;&#39;</td></tr>
+    <tr><td>Decrease</td><td>18</td><td>`` Man , I &#39; m sorry</td></tr>
+    <tr><td>Same</td><td>19</td><td>I tried to kill you there ,</td></tr>
+    <tr><td>Same</td><td>20</td><td>hey , I heard you guys were out of food , here , you can share my dinner &#39;&#39; Clancy marvels , even after all this : The Reorganization , the coalitions , the war , Rob is still his old , chatty self .</td></tr>
+    <tr><td>Same</td><td>21</td><td>The two men sit , Rob chatting away , Clancy forcing out pleasantries .</td></tr>
+    <tr><td>Same</td><td>22</td><td>They pass Rob &#39;s rations between them .</td></tr>
+    <tr><td>Increase</td><td>23</td><td>`` Clancy my man , I heard a group of terrorist 5 &#39;s took have formed some kind of cult , and they &#39;re rallying all the &lt; 50 in their own coalition &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>24</td><td>`` Oh yeah ? &#39;&#39;</td></tr>
+    <tr><td>Decrease</td><td>25</td><td>`` Yeah , I mean , that sucks and everything , cause those are some scary dudes , but I heard that there &#39;s going to be a truce between our countries in a few days , why do n&#39;t we just hang out here , pretty soon we wo n&#39;t even be enemies anymore ! &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>26</td><td>`` Yeah , Rob , that sounds like a plan &#39;&#39;</td></tr>
+    <tr><td>Increase</td><td>27</td><td>`` Man , I &#39; m so glad I found you again , in a few days , this war will be over , and things will be cool between us and , hey , remember Sarah ?</td></tr>
+    <tr><td>Same</td><td>28</td><td>I heard she &#39;s a 151 , maybe I &#39;ll look her up , I &#39;ll be sure to visit you too once I can get a pass to sector 150 - 155 , it &#39;ll probably be tough though , even before the war</td></tr>
+    <tr><td>Same</td><td>29</td><td>, you had to do sooo much paperwork to be allowed to visit , I wonder if passes will even be reinstated after the truce ends , hey , did I ever tell you about the time ... &#39;&#39;</td></tr>
+    <tr><td>Increase</td><td>30</td><td>Rob babbles as he dozes off , grinning up at Clancy .</td></tr>
+    <tr><td>Big Increase</td><td>31</td><td>When Clancy is sure that his friend is asleep , he slits Rob &#39;s throat with his bayonet .</td></tr>
+    <tr><td>Decrease</td><td>32</td><td>Clancy climbs out of the foxhole , and stumbles his way back to battalion HQ .</td></tr></table>
+
+    <p>The dramatic tension rises at the begging when a murder is mentioned and the police are involved and Thomas says he will show them where the crime is.
+     The longish middle section meanders with some casual conversation and descriptions of taking the boat out. But throughout there are hints that the tension is increasing
+     such as the Woman Officer raising an eyebrow or the Thomas thinking that they think he's a madman both of which create unease in the characters that something bad may happen.
+     It finishes with a dramatic killing which raises the tension to a peak before a couple of sentences that resolve it with the scene being more peaceful as both officers are dead.</p>
 
     <table>
     <tr><th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
-    <tr>NA<td></td><td>0</td><td>When the police arrived , Thomas was already waiting .</td></tr>
-    <tr><td></td><td>1</td><td>His hands deep in his pockets , his face red from the cold .</td></tr>
-    <tr><td></td><td>2</td><td>`` Over here , officers !</td></tr>
-    <tr><td></td><td>3</td><td>`` , Thomas waved his right hand so they would notive him .</td></tr>
-    <tr><td></td><td>4</td><td>After the car had stopped two policemen got out , a tall man - without the expected doughnout - belly - and a young woman .</td></tr>
-    <tr><td></td><td>5</td><td>Unfortunately she was n&#39;t very attractive , but for once Thomas had something more exciting on his mind then women .</td></tr>
-    <tr><td></td><td>6</td><td>They walked towards Thomas , the snow scrunched under their leather boots , and looked around .</td></tr>
-    <tr><td></td><td>7</td><td>`` What &#39;s the matter , sir ?</td></tr>
-    <tr><td></td><td>8</td><td>`` , the man began .</td></tr>
-    <tr><td></td><td>9</td><td>`` On the phone you told us you had found the most exciting crime scene ever ?</td></tr>
-    <tr><td></td><td>10</td><td>And that it must have been murder ? &#39;&#39;</td></tr>
-    <tr><td></td><td>11</td><td>Thomas noticed the doubt and wariness in his voice , but he did n&#39;t let it get to him .</td></tr>
-    <tr><td></td><td>12</td><td>`` That s true , why should I lie about that ?</td></tr>
-    <tr><td></td><td>13</td><td>I can show you , it &#39;s right over there !</td></tr>
-    <tr><td></td><td>14</td><td>`` , with these words Thomes turned around and carefully walked down the slippery way to his old wooden boat .</td></tr>
-    <tr><td></td><td>15</td><td>He took a glance back and noticed , that both policemen followed him .</td></tr>
-    <tr><td></td><td>16</td><td>They would be as surprised as he had been !</td></tr>
-    <tr><td></td><td>17</td><td>He reached his boat and stopped , holding it with one hand and waving the officers to get in .</td></tr>
-    <tr><td></td><td>18</td><td>`` Please , its in the middle of the lake !</td></tr>
-    <tr><td></td><td>19</td><td>I could n&#39;t believe it at first , something like this , out here , where everybody knows everybody ... &#39;&#39;</td></tr>
-    <tr><td></td><td>20</td><td>, he stopped talking as he noticed that he did n&#39;t know the police officers .</td></tr>
-    <tr><td></td><td>21</td><td>`` Well , most of the people know most of the people around here ... &#39;&#39; , he continued less enthusiastic .</td></tr>
-    <tr><td></td><td>22</td><td>`` But anyways &#39;&#39; , he went on , as he pushed the boat into the water .</td></tr>
-    <tr><td></td><td>23</td><td>`` There are n&#39;t many murder cases around here , eh ? &#39;&#39;</td></tr>
-    <tr><td></td><td>24</td><td>The woman raised an eyebrow as she noticed Thomas &#39; cheeky glimpse towards her .</td></tr>
-    <tr><td></td><td>25</td><td>Noone answered his question .</td></tr>
-    <tr><td></td><td>26</td><td>`` Well , it wo n&#39;t take long , I better be rowing now . &#39;&#39;</td></tr>
-    <tr><td></td><td>27</td><td>Thomas did n&#39;t like the silence , he felt the officers looks in his back .</td></tr>
-    <tr><td></td><td>28</td><td>Surely they were thinking he was a madman , only taking a look because it was their duty .</td></tr>
-    <tr><td></td><td>29</td><td>Well , soon they would see .</td></tr>
-    <tr><td></td><td>30</td><td>As they drew closer to the place , Thomas started talking again .</td></tr>
-    <tr><td></td><td>31</td><td>`` You know , this lake is completely frozen during the winter .</td></tr>
-    <tr><td></td><td>32</td><td>It started melting about two weeks ago , which is completely normal .</td></tr>
-    <tr><td></td><td>33</td><td>I like the peace and the silence , so I bought the boat and come out here often now .</td></tr>
-    <tr><td></td><td>34</td><td>Today was my first trip this year , I had a book and some beer with me</td></tr>
-    <tr><td></td><td>35</td><td>- wait , there is no &#39; Do n&#39;t drink and row &#39; , is it ?</td></tr>
-    <tr><td></td><td>36</td><td>`` , he asked jokingly .</td></tr>
-    <tr><td></td><td>37</td><td>He turned his head to look into the serious faces of two persons who clearly were n&#39;t in the mood for jokes .</td></tr>
-    <tr><td></td><td>38</td><td>`` Anyways , here I was &#39;&#39; , he pulled in the oars .</td></tr>
-    <tr><td></td><td>39</td><td>`` Reading my book , as I wanted to see if there were fish in the cold water at the top . &#39;&#39;</td></tr>
-    <tr><td></td><td>40</td><td>He stepped to the rail and leaned over .</td></tr>
-    <tr><td></td><td>41</td><td>He deepened his voice and saw from the corner of his eye as the officers got curious and moved towards him .</td></tr>
-    <tr><td></td><td>42</td><td>`` But what I saw - &#39;&#39; , he made a short pause while the officers leaned over the rail to see into the water .</td></tr>
-    <tr><td></td><td>43</td><td>`` - scared me to DEATH ! &#39;&#39;</td></tr>
-    <tr><td></td><td>44</td><td>With the last word he swung the meat cleaver , which sunk deep in the man &#39;s head .</td></tr>
-    <tr><td></td><td>45</td><td>The body flinched and fell into the water , the woman jumped back , terror in her eyes , and tried to get her pistol from the belt .</td></tr>
-    <tr><td></td><td>46</td><td>`` BECAUSE I SAW MYSELF !</td></tr>
-    <tr><td></td><td>47</td><td>THOMAS , THE MAN WHO IS HATED , THE MAN WHO HATES , THE MAN WHO LOVES THE SMELL - OF - DEATH ! &#39;&#39;</td></tr>
-    <tr><td></td><td>48</td><td>The woman could n&#39;t see properly anymore , tears filled her eyes .</td></tr>
-    <tr><td></td><td>49</td><td>For the first time in her life she had to pull the gun , but she wans&#39;t able to .</td></tr>
-    <tr><td></td><td>50</td><td>She saw the blurred madman who jumped towards her , hissing `` Death !</td></tr>
-    <tr><td></td><td>51</td><td>Death !</td></tr>
-    <tr><td></td><td>52</td><td>Death !</td></tr>
-    <tr><td></td><td>53</td><td>`` , and felt cold steel split her chest .</td></tr>
-    <tr><td></td><td>54</td><td>Over and over again he hacked her flesh .</td></tr>
-    <tr><td></td><td>55</td><td>She did n&#39;t even scream .</td></tr>
-    <tr><td></td><td>56</td><td>The horror had shut her mouth .</td></tr>
-    <tr><td></td><td>57</td><td>As the pain faded away and she felt very tired , she sank back so that her upper body was hanging over the rail .</td></tr>
-    <tr><td></td><td>58</td><td>Her last look was towards the grey sky , where the last snow began to fall .</td></tr></table>
-
-   <table>
-   <tr><th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
-   <tr>NA<td></td><td>0</td><td>The city is silent today .</td></tr>
-   <tr><td></td><td>1</td><td>The last screams have been muzzled , the last cries have been killed , and not a sound is echoing above the dying city of Paris .</td></tr>
-   <tr><td></td><td>2</td><td>From my penthouse , I look over the once - thriving center of my country , and I weep .</td></tr>
-   <tr><td></td><td>3</td><td>Smoke is rising from the Hotel des Invalides , where the remaining fighting forces took their last stance .</td></tr>
-   <tr><td></td><td>4</td><td>The dome has been torn appart , and its ornament , once glistening gold , are now charred and black as coal .</td></tr>
-   <tr><td></td><td>5</td><td>The top of the Eiffel Tower , the last remaining patriotic radio antenna , is missing , and its metallic beams bent in every directions look like some demented sculpture .</td></tr>
-   <tr><td></td><td>6</td><td>Not a single pan of glass remains on the roof of the Great Palace , and the great Obelisk that a week ago still adorned the Place de la Concorde is invisible .</td></tr>
-   <tr><td></td><td>7</td><td>I know , for seeing it yesterday , that it is now lying on the pavement , in three separate pieces .</td></tr>
-   <tr><td></td><td>8</td><td>The Arc de Triomphe looks mostly intact .</td></tr>
-   <tr><td></td><td>9</td><td>But I know it has lost some consequent chunks of its structure .</td></tr>
-   <tr><td></td><td>10</td><td>The carvings have been heavily damaged .</td></tr>
-   <tr><td></td><td>11</td><td>A quarter of the Palais du Louvre is gone , the rest of it so disfigured it is barely recognisable .</td></tr>
-   <tr><td></td><td>12</td><td>I know parts of the museum &#39;s collections have been moved to safety just in time , but the rest has been hopelessly lost in the fight for the city .</td></tr>
-   <tr><td></td><td>13</td><td>The tower of Montparnasse is gone as well .</td></tr>
-   <tr><td></td><td>14</td><td>It fell three days into the fight , destroying most of the merchant gallery underneath , and part of the Montparnasse train station .</td></tr>
-   <tr><td></td><td>15</td><td>Hundreds of people died that day .</td></tr>
-   <tr><td></td><td>16</td><td>The train station was being used as an emergency shelter and field hospital at the time .</td></tr>
-   <tr><td></td><td>17</td><td>Everywhere I look , I see destruction , plumes of black smoke , big holes in the city landscape I used to know so well .</td></tr>
-   <tr><td></td><td>18</td><td>Buildings gutted or leveled out , rubbles blocking the streets , craters in the gardens , wrecks floating along the Seine ...</td></tr>
-   <tr><td></td><td>19</td><td>The River has never been so dark with filth .</td></tr>
-   <tr><td></td><td>20</td><td>Half of its bridges are gone , and those who still stand are so unstable very few will take the risk to cross them .</td></tr>
-   <tr><td></td><td>21</td><td>The bridge Alexandre III has no floor anymore .</td></tr>
-   <tr><td></td><td>22</td><td>Only its railing and piles .</td></tr>
-   <tr><td></td><td>23</td><td>You can see the river and its macabre load leisurely passing underneath them .</td></tr>
-   <tr><td></td><td>24</td><td>Sometimes , among the rubble , you can see a human form .</td></tr>
-   <tr><td></td><td>25</td><td>A man , a woman , or even a child , unmoving , floating amidst the excretions of the wounded city .</td></tr>
-   <tr><td></td><td>26</td><td>So many dead .</td></tr>
-   <tr><td></td><td>27</td><td>So many ...</td></tr>
-   <tr><td></td><td>28</td><td>I raise my eyes to the only remaining feature I can recognise .</td></tr>
-   <tr><td></td><td>29</td><td>The Basilique du Sacré - Coeur is incredibly , miraculously intact .</td></tr>
-   <tr><td></td><td>30</td><td>The white of its stones has lost its brightness , tainted by Paris &#39; sick exhalation , but it otherwise stands as proud , as beautiful as ever .</td></tr>
-   <tr><td></td><td>31</td><td>The sanctuary has stayed unviolated throughout the whole conflict , and none of those who sought refuge there have been harmed .</td></tr>
-   <tr><td></td><td>32</td><td>Not even Notre - Dame de Paris can say the same .</td></tr>
-   <tr><td></td><td>33</td><td>The cathedral is missing its roof , and one of its tower fell , killing dozens of people in the process .</td></tr>
-   <tr><td></td><td>34</td><td>So many .</td></tr>
-   <tr><td></td><td>35</td><td>So many people , lost .</td></tr>
-   <tr><td></td><td>36</td><td>And I could do nothing .</td></tr>
-   <tr><td></td><td>37</td><td>I shudder as a new wave of tears makes its way through me .</td></tr>
-   <tr><td></td><td>38</td><td>I cross my arms around me , trying to keep myself together , to contain it , but it is useless .</td></tr>
-   <tr><td></td><td>39</td><td>My city is dying , my country is dying , my people is dying , and my heart is weeping , for them , and for me .</td></tr>
-   <tr><td></td><td>40</td><td>And yet ...</td></tr>
-   <tr><td></td><td>41</td><td>Foosteps behind me .</td></tr>
-   <tr><td></td><td>42</td><td>I do n&#39;t turn around , I know who it is .</td></tr>
-   <tr><td></td><td>43</td><td>I have been waiting for him .</td></tr>
-   <tr><td></td><td>44</td><td>His arms encircle me and he presses himself against my back , laying down a kiss on my neck before putting his cheek on my head .</td></tr>
-   <tr><td></td><td>45</td><td>I heave a sigh , and let the comfort of his presence calm me down .</td></tr>
-   <tr><td></td><td>46</td><td>`` I hate you &#39;&#39; , I say softly , aware he can hear my tears in my strangled voice .</td></tr>
-   <tr><td></td><td>47</td><td>`` I know &#39;&#39; , he replies simply .</td></tr>
-   <tr><td></td><td>48</td><td>I wait in silence .</td></tr>
-   <tr><td></td><td>49</td><td>Then ... `` I love you &#39;&#39; , is his whisper in my hair .</td></tr>
-   <tr><td></td><td>50</td><td>I close my eyes .</td></tr>
-   <tr><td></td><td>51</td><td>I have never been able to counter the effect those words said by this voice have on me .</td></tr>
-   <tr><td></td><td>52</td><td>`` I know &#39;&#39; , I answer .</td></tr>
-   <tr><td></td><td>53</td><td>And I do .</td></tr>
-   <tr><td></td><td>54</td><td>I really do .</td></tr>
-   <tr><td></td><td>55</td><td>His love for me is so intense sometimes it scares me .</td></tr>
-   <tr><td></td><td>56</td><td>What he is capable of , what he is ready to do , because he loves me , what he HAS done , because he loves me , scares me .</td></tr>
-   <tr><td></td><td>57</td><td>But because of that , I can never doubt it .</td></tr>
-   <tr><td></td><td>58</td><td>I know he does love me , as I know the sun will rise tomorrow morning .</td></tr>
-   <tr><td></td><td>59</td><td>And I know that , whatever happens , whatever he does , to me , for me , because of me , I will always be helpless to resist him .</td></tr>
-   <tr><td></td><td>60</td><td>`` You are mine &#39;&#39; , he whispers .</td></tr>
-   <tr><td></td><td>61</td><td>And I am .</td></tr>
-   <tr><td></td><td>62</td><td>Whatever happens , whatever he does , whatever he wants , I am his , body and soul , helpless .</td></tr>
-   <tr><td></td><td>63</td><td>I open my eyes .</td></tr>
-   <tr><td></td><td>64</td><td>The city is laying at my feet , charred , wounded , defeated and bloodless .</td></tr>
-   <tr><td></td><td>65</td><td>I look at it .</td></tr>
-   <tr><td></td><td>66</td><td>Look at the ravaged ground , the grey , heavy sky , and the Sacré - Coeur , white , untouched , towering over the disaster .</td></tr>
-   <tr><td></td><td>67</td><td>I look at it all , knowing I did nothing to stop it , helpless against the devastating strength of those softly whispered words , of this love that I can not live without , and I enclose it all in that part of my heart that is bleeding , that will bleed now until the day I die .</td></tr>
-   <tr><td></td><td>68</td><td>Then I turn around in the haven of his arms , and I dive into his bottomless eyes , so full of so many things , so intense when they look at me , so possessive that I shudder , from fear or pleasure I do not know .</td></tr>
-   <tr><td></td><td>69</td><td>Maybe both .</td></tr>
-   <tr><td></td><td>70</td><td>He just tore France apart because of me , and I will carry the guilt forever .</td></tr>
-   <tr><td></td><td>71</td><td>But it all fades in comparison to how he makes me feel when he says those words , when he holds me in his arms , when he takes me in his bed .</td></tr>
-   <tr><td></td><td>72</td><td>Whatever he wants , I am forever helpless to deny him .</td></tr>
-   <tr><td></td><td>73</td><td>`` I am yours &#39;&#39; , I say .</td></tr>
-   <tr><td></td><td>74</td><td>A gleam of triumph lights his eyes , and his arms tighten around me .</td></tr>
-   <tr><td></td><td>75</td><td>`` Forever . &#39;&#39;</td></tr>
-   <tr><td></td><td>76</td><td>And above the silent ruins of the city he destroyed for me , he takes me , and I surrender to his overwhelming love .</td></tr>
-   <tr><td></td><td>77</td><td>Whatever happens , whatever he does , forever , I am his .</td></tr>
-   <tr><td></td><td>78</td><td>[ Note : English is not my first language .</td></tr>
-   <tr><td></td><td>79</td><td>Anything to help me improve it , along with my writing in general , is welcome : - ) ]</td></tr></table>
- 
+    <tr><td>NA</td><td>0</td><td>When the police arrived , Thomas was already waiting .</td></tr>
+    <tr><td>Increase</td><td>1</td><td>His hands deep in his pockets , his face red from the cold .</td></tr>
+    <tr><td>Increase</td><td>2</td><td>`` Over here , officers !</td></tr>
+    <tr><td>Same</td><td>3</td><td>`` , Thomas waved his right hand so they would notive him .</td></tr>
+    <tr><td>Increase</td><td>4</td><td>After the car had stopped two policemen got out , a tall man - without the expected doughnout - belly - and a young woman .</td></tr>
+    <tr><td>Decrease</td><td>5</td><td>Unfortunately she was n&#39;t very attractive , but for once Thomas had something more exciting on his mind then women .</td></tr>
+    <tr><td>Same</td><td>6</td><td>They walked towards Thomas , the snow scrunched under their leather boots , and looked around .</td></tr>
+    <tr><td>Increase</td><td>7</td><td>`` What &#39;s the matter , sir ?</td></tr>
+    <tr><td>Same</td><td>8</td><td>`` , the man began .</td></tr>
+    <tr><td>Increase</td><td>9</td><td>`` On the phone you told us you had found the most exciting crime scene ever ?</td></tr>
+    <tr><td>Increase</td><td>10</td><td>And that it must have been murder ? &#39;&#39;</td></tr>
+    <tr><td>Decrease</td><td>11</td><td>Thomas noticed the doubt and wariness in his voice , but he did n&#39;t let it get to him .</td></tr>
+    <tr><td>Increase</td><td>12</td><td>`` That s true , why should I lie about that ?</td></tr>
+    <tr><td>Increase</td><td>13</td><td>I can show you , it &#39;s right over there !</td></tr>
+    <tr><td>Increase</td><td>14</td><td>`` , with these words Thomas turned around and carefully walked down the slippery way to his old wooden boat .</td></tr>
+    <tr><td>Same</td><td>15</td><td>He took a glance back and noticed , that both policemen followed him .</td></tr>
+    <tr><td>Same</td><td>16</td><td>They would be as surprised as he had been !</td></tr>
+    <tr><td>Same</td><td>17</td><td>He reached his boat and stopped , holding it with one hand and waving the officers to get in .</td></tr>
+    <tr><td>Decrease</td><td>18</td><td>`` Please , its in the middle of the lake !</td></tr>
+    <tr><td>Decrease</td><td>19</td><td>I could n&#39;t believe it at first , something like this , out here , where everybody knows everybody ... &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>20</td><td>, he stopped talking as he noticed that he did n&#39;t know the police officers .</td></tr>
+    <tr><td>Decrease</td><td>21</td><td>`` Well , most of the people know most of the people around here ... &#39;&#39; , he continued less enthusiastic .</td></tr>
+    <tr><td>Same</td><td>22</td><td>`` But anyways &#39;&#39; , he went on , as he pushed the boat into the water .</td></tr>
+    <tr><td>Decrease</td><td>23</td><td>`` There are n&#39;t many murder cases around here , eh ? &#39;&#39;</td></tr>
+    <tr><td>Increase</td><td>24</td><td>The woman raised an eyebrow as she noticed Thomas &#39; cheeky glimpse towards her .</td></tr>
+    <tr><td>Same</td><td>25</td><td>Noone answered his question .</td></tr>
+    <tr><td>Same</td><td>26</td><td>`` Well , it wo n&#39;t take long , I better be rowing now . &#39;&#39;</td></tr>
+    <tr><td>Increase</td><td>27</td><td>Thomas did n&#39;t like the silence , he felt the officers looks in his back .</td></tr>
+    <tr><td>Increase</td><td>28</td><td>Surely they were thinking he was a madman , only taking a look because it was their duty .</td></tr>
+    <tr><td>Increase</td><td>29</td><td>Well , soon they would see .</td></tr>
+    <tr><td>Same</td><td>30</td><td>As they drew closer to the place , Thomas started talking again .</td></tr>
+    <tr><td>Decrease</td><td>31</td><td>`` You know , this lake is completely frozen during the winter .</td></tr>
+    <tr><td>Decrease</td><td>32</td><td>It started melting about two weeks ago , which is completely normal .</td></tr>
+    <tr><td>Decrease</td><td>33</td><td>I like the peace and the silence , so I bought the boat and come out here often now .</td></tr>
+    <tr><td>Decrease</td><td>34</td><td>Today was my first trip this year , I had a book and some beer with me</td></tr>
+    <tr><td>Decrease</td><td>35</td><td>- wait , there is no &#39; Do n&#39;t drink and row &#39; , is it ?</td></tr>
+    <tr><td>Same</td><td>36</td><td>`` , he asked jokingly .</td></tr>
+    <tr><td>Increase</td><td>37</td><td>He turned his head to look into the serious faces of two persons who clearly were n&#39;t in the mood for jokes .</td></tr>
+    <tr><td>Same</td><td>38</td><td>`` Anyways , here I was &#39;&#39; , he pulled in the oars .</td></tr>
+    <tr><td>Same</td><td>39</td><td>`` Reading my book , as I wanted to see if there were fish in the cold water at the top . &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>40</td><td>He stepped to the rail and leaned over .</td></tr>
+    <tr><td>Increase</td><td>41</td><td>He deepened his voice and saw from the corner of his eye as the officers got curious and moved towards him .</td></tr>
+    <tr><td>Increase</td><td>42</td><td>`` But what I saw - &#39;&#39; , he made a short pause while the officers leaned over the rail to see into the water .</td></tr>
+    <tr><td>Increase</td><td>43</td><td>`` - scared me to DEATH ! &#39;&#39;</td></tr>
+    <tr><td>Big Increase</td><td>44</td><td>With the last word he swung the meat cleaver , which sunk deep in the man &#39;s head .</td></tr>
+    <tr><td>Increase</td><td>45</td><td>The body flinched and fell into the water , the woman jumped back , terror in her eyes , and tried to get her pistol from the belt .</td></tr>
+    <tr><td>Same</td><td>46</td><td>`` BECAUSE I SAW MYSELF !</td></tr>
+    <tr><td>Big Increase</td><td>47</td><td>THOMAS , THE MAN WHO IS HATED , THE MAN WHO HATES , THE MAN WHO LOVES THE SMELL - OF - DEATH ! &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>48</td><td>The woman could n&#39;t see properly anymore , tears filled her eyes .</td></tr>
+    <tr><td>Increase</td><td>49</td><td>For the first time in her life she had to pull the gun , but she wans&#39;t able to .</td></tr>
+    <tr><td>Increase</td><td>50</td><td>She saw the blurred madman who jumped towards her , hissing `` Death !</td></tr>
+    <tr><td>Same</td><td>51</td><td>Death !</td></tr>
+    <tr><td>Same</td><td>52</td><td>Death !</td></tr>
+    <tr><td>Same</td><td>53</td><td>`` , and felt cold steel split her chest .</td></tr>
+    <tr><td>Increase</td><td>54</td><td>Over and over again he hacked her flesh .</td></tr>
+    <tr><td>Same </td><td>55</td><td>She did n&#39;t even scream .</td></tr>
+    <tr><td>Same</td><td>56</td><td>The horror had shut her mouth .</td></tr>
+    <tr><td>Decrease</td><td>57</td><td>As the pain faded away and she felt very tired , she sank back so that her upper body was hanging over the rail .</td></tr>
+    <tr><td>Big Decrease</td><td>58</td><td>Her last look was towards the grey sky , where the last snow began to fall .</td></tr></table>
 
 </div>
 {:else if workflow_state === "SUMMARY"}
