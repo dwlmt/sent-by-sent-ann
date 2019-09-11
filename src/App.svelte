@@ -310,12 +310,14 @@
       plot points, goals or obstacles that the characters overcame in the story.</li>
       <li><strong>Review:</strong> Write a couple of sentences reviewing the story saying what you like or don't like about it and why. For either mention if it is the topic, characters, action,
        tension etc that draw you into the story or find boring.</li>
-      <li><strong>Rating:</strong> A 5 point scale from very uninteresting to very interesting. Just go with your own judgement.</li>
+      <li><strong>Rating:</strong> A 5 point scale from very uninteresting to very interesting. Just go with your own judgement on how interesting the story is.</li>
     </ul>
     <h3>Examples</h3>
     <p>These are some examples of the sentence to sentence annotations for stories. Each table is a separate story and the answer that would be expected.
     Remember that it is the relative change that is being recorded rather than the absolute tension. The below stories are guidelines there is some subjectivity but
     interpret the stories as you see most appropriate from the criteria above.</p>
+
+    <h4>Foxhole</h4>
 
     <p>This judgement is only possible retrospectively but is an explanation for the below. There are two major peaks in the below. The tension rises dramatically with the confrontation
     at the beginning Clancy is under threat from an enemy. The tension gradually decreases as they realise they know each other and talk about no more being enemies. Then there is a sudden
@@ -356,6 +358,8 @@
     <tr><td>Increase</td><td>30</td><td>Rob babbles as he dozes off , grinning up at Clancy .</td></tr>
     <tr><td>Big Increase</td><td>31</td><td>When Clancy is sure that his friend is asleep , he slits Rob &#39;s throat with his bayonet .</td></tr>
     <tr><td>Decrease</td><td>32</td><td>Clancy climbs out of the foxhole , and stumbles his way back to battalion HQ .</td></tr></table>
+
+    <h4>Lake Murder</h4>
 
     <p>The dramatic tension rises at the begging when a murder is mentioned and the police are involved and Thomas says he will show them where the crime is.
      The longish middle section meanders with some casual conversation and descriptions of taking the boat out. But throughout there are hints that the tension is increasing
@@ -423,6 +427,75 @@
     <tr><td>Same</td><td>56</td><td>The horror had shut her mouth .</td></tr>
     <tr><td>Decrease</td><td>57</td><td>As the pain faded away and she felt very tired , she sank back so that her upper body was hanging over the rail .</td></tr>
     <tr><td>Big Decrease</td><td>58</td><td>Her last look was towards the grey sky , where the last snow began to fall .</td></tr></table>
+
+    <h4>Truth</h4>
+
+    <p>This story is about someone who leaves there mother to find the truth relating to the disease effecting her. There is a peak of tension in the beginning when we learn of the Monthers condition.
+    Then a decrease with a melancholy over having left her and that she's gone so far. Then he encounters the figure and the tension slowly rises until he realises that it his Mother at the climax of the story.
+    In this story it may be obvious to the reader that the figure is likely to be the Mother. But judging it from the characters perspective it is not and there is a high uncertainty over it
+    in the primary characters mind which scores it as increasing tension.</p>
+    
+    <table>
+     <tr><th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
+    <tr><td>NA</td><td>0</td><td>It had been 45 years .</td></tr>
+    <tr><td>Increase</td><td>1</td><td>Forty - five years since I had left home , left anyone familiar .</td></tr>
+    <tr><td>Increase</td><td>2</td><td>Then , I was a sprite 16 years , already pushing to be the one who would find the truth that the elders spoke of in their rhymes and confusing riddles .</td></tr>
+    <tr><td>Same</td><td>3</td><td>No one was able to ever determine what &#39; the truth &#39; truly was , but it was suggested by many that if you followed the path the elders described in their stories , you would be able to reach it and see it &#39;s beauty .</td></tr>
+    <tr><td>Same</td><td>4</td><td>Back then , I had assumed that finding the truth would take me 5 , 10 years tops .</td></tr>
+    <tr><td>Decrease</td><td>5</td><td>I had left home , filled with hope .</td></tr>
+    <tr><td>Increase</td><td>6</td><td>My mother watched me leave the house , with tears in her eyes .</td></tr>
+    <tr><td>Same</td><td>7</td><td>I had tried to explain to her that I would return after finding it , and that I would be back to visit .</td></tr>
+    <tr><td>Increase</td><td>8</td><td>I remember her hugging me , and asking me not to go .</td></tr>
+    <tr><td>Same</td><td>9</td><td>I had explained that I needed to , that I could n&#39;t simply stay in our village and live my life without knowing .</td></tr>
+    <tr><td>Same</td><td>10</td><td>Besides ; the truth was suppose to help me solve her pain , to give her peace .</td></tr>
+    <tr><td>Increase</td><td>11</td><td>How could I let my mother live her life without needing help to walk three steps , when she was only 40 years old , and a dancer ? !</td></tr>
+    <tr><td>Increase</td><td>12</td><td>I had watched her slowly deteriorate over the last 5 years .</td></tr>
+    <tr><td>Same</td><td>13</td><td>Dancing was her passion .</td></tr>
+    <tr><td>Same</td><td>14</td><td>I had to stop this curse her body had placed on her .</td></tr>
+    <tr><td>Same</td><td>15</td><td>And the truth was the answer .</td></tr>
+    <tr><td>Decrease</td><td>16</td><td>At the time , I did n&#39;t realize that once I had started this quest , I would n&#39;t be able to stop .</td></tr>
+    <tr><td>Decrease</td><td>17</td><td>That I would be so absorbed in traveling and searching that I would n&#39;t realize the years slipping away .</td></tr>
+    <tr><td>Increase</td><td>18</td><td>That I was leaving my poor , lonely mother all alone for the rest of her life .</td></tr>
+    <tr><td>Decrease</td><td>19</td><td>At least , I suppose she was gone by now .</td></tr>
+    <tr><td>Decrease</td><td>20</td><td>It had been 45 years .</td></tr>
+    <tr><td>Decrease</td><td>21</td><td>A lot of good the truth ended up doing her .</td></tr>
+    <tr><td>Decrease</td><td>22</td><td>Now , I had reached the end of the story .</td></tr>
+    <tr><td>Increase</td><td>23</td><td>I had finally understood the rhymes , the riddles ...</td></tr>
+    <tr><td>Same</td><td>24</td><td>I was where I needed to be .</td></tr>
+    <tr><td>Same</td><td>25</td><td>I looked into the clear pool , seeing the lines on my face , the sun spots upon my skin .</td></tr>
+    <tr><td>Increase</td><td>26</td><td>A figure sat in front of me , a dark hood covering it &#39;s face .</td></tr>
+    <tr><td>Same</td><td>27</td><td>It was floating above the pool , just out of reach .</td></tr>
+    <tr><td>Increase</td><td>28</td><td>It had told me that it was here that many learned the truth .</td></tr>
+    <tr><td>Same</td><td>29</td><td>However , once I learned the truth , I could never go back .</td></tr>
+    <tr><td>Increase</td><td>30</td><td>If I left , I would keep my life ; indefinitely .</td></tr>
+    <tr><td>Same</td><td>31</td><td>Did I want to live an eternal life ?</td></tr>
+    <tr><td>Same</td><td>32</td><td>I had no one to call me own .</td></tr>
+    <tr><td>Same</td><td>33</td><td>I had no family , no one to call a friend .</td></tr>
+    <tr><td>Same</td><td>34</td><td>My thirst for the truth had controlled my life .</td></tr>
+    <tr><td>Same</td><td>35</td><td>The figure started ticking it &#39;s tongue , mimicking a clock .</td></tr>
+    <tr><td>Same</td><td>36</td><td>I could feel the sun setting behind my back .</td></tr>
+    <tr><td>Increase</td><td>37</td><td>It had told me I had had until sun down to decide .</td></tr>
+    <tr><td>Same</td><td>38</td><td>I had been sitting here for hours .</td></tr>
+    <tr><td>Same</td><td>39</td><td>I had to decide .</td></tr>
+    <tr><td>Same</td><td>40</td><td>There was no way that I went on this journey to not know the truth .</td></tr>
+    <tr><td>Same</td><td>41</td><td>I did n&#39;t want to believe I had a chance at a normal life .</td></tr>
+    <tr><td>Same</td><td>42</td><td>I did n&#39;t deserve one now , especially after leaving my mother like I did .</td></tr>
+    <tr><td>Same</td><td>43</td><td>I may have broken one promise , but I was not about to break this .</td></tr>
+    <tr><td>Increase</td><td>44</td><td>`` I want to know . &#39;&#39;</td></tr>
+    <tr><td>Same</td><td>45</td><td>I felt the figure smile , though I could n&#39;t see it .</td></tr>
+    <tr><td>Increase</td><td>46</td><td>The figure rose , and opened it &#39;s robes .</td></tr>
+    <tr><td>Increase</td><td>47</td><td>I felt the darkness creeping around me , the cold tendrils of mist making it &#39;s way between my feet .</td></tr>
+    <tr><td>Same</td><td>48</td><td>I thought my journey had prepared me for this ; I was sorely mistaken .</td></tr>
+    <tr><td>Decrease</td><td>49</td><td>I stared at the opening of the robes , questioning why I had wasted my life for this .</td></tr>
+    <tr><td>Same</td><td>50</td><td>`` Jordan . &#39;&#39;</td></tr>
+    <tr><td>Increase</td><td>51</td><td>My eyes widened , tears already filling them .</td></tr>
+    <tr><td>Increase</td><td>52</td><td>Could it be ?</td></tr>
+    <tr><td>Increase</td><td>53</td><td>I turned from the truth , to see a woman standing behind me , her arms wrapped around her body .</td></tr>
+    <tr><td>Same</td><td>54</td><td>Her long , brown hair was piled on top of her head in a ballerina &#39;s bun .</td></tr>
+    <tr><td>Increase</td><td>55</td><td>She had a forlorn smile upon her face .</td></tr>
+    <tr><td>Big Increase</td><td>56</td><td>`` Mother . &#39;&#39;</td></tr></table>
+
+
 
 </div>
 {:else if workflow_state === "SUMMARY"}
