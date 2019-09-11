@@ -353,8 +353,8 @@
     <tr><td></td><td>32</td><td>Clancy climbs out of the foxhole , and stumbles his way back to battalion HQ .</td></tr></table>
 
     <table>
-    <tr>NA<th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
-    <tr><td></td><td>0</td><td>When the police arrived , Thomas was already waiting .</td></tr>
+    <tr><th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
+    <tr>NA<td></td><td>0</td><td>When the police arrived , Thomas was already waiting .</td></tr>
     <tr><td></td><td>1</td><td>His hands deep in his pockets , his face red from the cold .</td></tr>
     <tr><td></td><td>2</td><td>`` Over here , officers !</td></tr>
     <tr><td></td><td>3</td><td>`` , Thomas waved his right hand so they would notive him .</td></tr>
@@ -415,8 +415,8 @@
     <tr><td></td><td>58</td><td>Her last look was towards the grey sky , where the last snow began to fall .</td></tr></table>
 
    <table>
-   <tr>NA<th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
-   <tr><td></td><td>0</td><td>The city is silent today .</td></tr>
+   <tr><th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
+   <tr>NA<td></td><td>0</td><td>The city is silent today .</td></tr>
    <tr><td></td><td>1</td><td>The last screams have been muzzled , the last cries have been killed , and not a sound is echoing above the dying city of Paris .</td></tr>
    <tr><td></td><td>2</td><td>From my penthouse , I look over the once - thriving center of my country , and I weep .</td></tr>
    <tr><td></td><td>3</td><td>Smoke is rising from the Hotel des Invalides , where the remaining fighting forces took their last stance .</td></tr>
