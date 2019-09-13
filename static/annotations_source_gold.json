@@ -1,0 +1,87 @@
+{
+  "stories": [
+    {
+      "story_id": -1,
+      "code": "76fg9iws17t4",
+      "trainer": true,
+      "pass_mark": 0.75,
+      "sentences": [
+        {
+          "id": -1,
+          "story_id": -1,
+          "sentence_num": 0,
+          "sentence_len": 4,
+          "start_span": 0,
+          "end_span": 29,
+          "text": "Test sentence gold one",
+          "sentence_id": -1,
+          "lang": "en",
+          "nonsense": 0,
+          "ascii_chars": 1,
+          "gold_answer": 0,
+          "gold_explanation": ""
+        },
+        {
+          "id": -2,
+          "story_id": -1,
+          "sentence_num": 1,
+          "sentence_len": 4,
+          "start_span": 0,
+          "end_span": 29,
+          "text": "Test sentence gold two",
+          "sentence_id": -1,
+          "lang": "en",
+          "nonsense": 0,
+          "ascii_chars": 1,
+          "gold_answer": 2,
+          "gold_explanation": "Decrease is the answer"
+        },
+        {
+          "id": -3,
+          "story_id": -1,
+          "sentence_num": 2,
+          "sentence_len": 4,
+          "start_span": 0,
+          "end_span": 29,
+          "text": "Test sentence gold three",
+          "sentence_id": -1,
+          "lang": "en",
+          "nonsense": 0,
+          "ascii_chars": 1,
+          "gold_answer": 3,
+          "gold_explanation": "Same is the answer"
+        },
+        {
+          "id": -4,
+          "story_id": -1,
+          "sentence_num": 3,
+          "sentence_len": 4,
+          "start_span": 0,
+          "end_span": 29,
+          "text": "Test sentence gold four",
+          "sentence_id": -1,
+          "lang": "en",
+          "nonsense": 0,
+          "ascii_chars": 1,
+          "gold_answer": 4,
+          "gold_explanation": "Increase is the answer"
+        },
+        {
+          "id": -5,
+          "story_id": -1,
+          "sentence_num": 4,
+          "sentence_len": 4,
+          "start_span": 0,
+          "end_span": 29,
+          "text": "Test sentence gold five",
+          "sentence_id": -1,
+          "lang": "en",
+          "nonsense": 0,
+          "ascii_chars": 1,
+          "gold_answer": 5,
+          "gold_explanation": "Big Increase is the answer"
+        }
+      ]
+    }
+  ]
+}

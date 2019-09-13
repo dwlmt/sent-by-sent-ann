@@ -1,5 +1,6 @@
 <script>
     import annotations_source from '../static/annotations_source.json';
+    import annotations_source_gold from '../static/annotations_source_gold.json';
 
     import firebase from 'firebase/app';
     import 'firebase/auth';
@@ -19,7 +20,7 @@
       firebase.initializeApp(firebaseConfig);
 
     let db = firebase.firestore();
-    let db_collection = "sentence_annotations_sandbox";
+    let db_collection = "sentence_annotations_gold_test";
 
     $: valid_story = true;
 
@@ -37,6 +38,10 @@
     for (const s of annotations_source.stories) {
         annotations_lookup[String(s.story_id)] = s;
     }
+    for (const s of annotations_source_gold.stories) {
+            annotations_lookup[String(s.story_id)] = s;
+            console.log(s)
+    }
 
     import { writable } from 'svelte/store';
     export const story_annotations = writable([]);
@@ -45,6 +50,9 @@
 	$: active_story_id = -1;
 	$: code = -1;
 	$: last_choice = 0;
+	$: trainer = false;
+	$: sentence_correct = true;
+	$: correct_count = 0;
 	$: active_story_complete = false;
 	$: workflow_state = "INSTRUCTIONS";
 	$: show_annotations = false;
@@ -55,6 +63,20 @@
 	$: active_story_sentences = [];
     $: active_sentence_index = 0;
     $: active_sentence = null;
+
+    function moveNext() {
+         sentence_correct = true;
+         if (active_sentence_index + 1 === active_story_sentences.length) {
+                        active_story_complete = true;
+                        workflow_state = "SUMMARY"
+         }
+
+         active_sentence_index = Math.min(active_sentence_index + 1, active_story_sentences.length - 1);
+         active_sentence = active_story_sentences[active_sentence_index];
+         last_choice = choice;
+
+         start_timer = new Date().getTime();
+    }
 
     function sentenceChoice(choice, interaction_type="button") {
 
@@ -68,40 +90,44 @@
             annotation_result_map["sentence_len"] = active_sentence["sentence_len"];
             annotation_result_map["interaction_type"] = interaction_type;
 
+            if (trainer === true) {
+                annotation_result_map["gold_answer"]  = active_sentence["gold_answer"];
+                annotation_result_map["correct"] =  choice === active_sentence["gold_answer"];
+
+            }
+
              if (active_story_complete === false) {
                 console.log(`Annotations: ${annotation_result_map}`);
                 story_annotations.update(n => n.concat([annotation_result_map]));
              }
 
-            if (active_sentence_index + 1 === active_story_sentences.length) {
-                active_story_complete = true;
-                workflow_state = "SUMMARY"
-            }
-
-            active_sentence_index = Math.min(active_sentence_index + 1, active_story_sentences.length - 1);
-            active_sentence = active_story_sentences[active_sentence_index]
-            last_choice = choice;
-
-            start_timer = new Date().getTime();
+             if (annotation_result_map["correct"] === true) {
+                 correct_count += 1;
+                 sentence_correct = true;
+                 moveNext();
+             } else{
+                 sentence_correct = false;
+             }
         }
-
     }
 
     function undoAnnotation() {
 
-    let duration = new Date().getTime() - start_timer;
-    if (duration > min_duration){
-         if (active_story_complete === false) {
-                    story_annotations.update(n => {
-                        active_sentence_index -= 1
-                        active_sentence = active_story_sentences[active_sentence_index];
-                        return n.slice(0, -1);
-                    })
-                 }
+        if (trainer === false) {
+            let duration = new Date().getTime() - start_timer;
+            if (duration > min_duration){
+                 if (active_story_complete === false) {
+                            story_annotations.update(n => {
+                                active_sentence_index -= 1
+                                active_sentence = active_story_sentences[active_sentence_index];
+                                return n.slice(0, -1);
+                            })
+                         }
+                }
+
+                start_timer = new Date().getTime();
+
         }
-
-        start_timer = new Date().getTime();
-
     }
 
     function post(path, params, method='post') {
@@ -141,6 +167,10 @@
 
         if (String(active_story_id) in annotations_lookup){
             let story = annotations_lookup[active_story_id];
+
+            if ("trainer" in story && story.trainer === true) {
+                trainer = true;
+            }
             active_story_sentences = story["sentences"];
             active_sentence = active_story_sentences[active_sentence_index];
 
@@ -188,8 +218,13 @@
                 console.log("Document written with ID: ", docRef.id);
 
                 if (turk_submit_to != null && turk_submit_to.length > 0) {
-                    console.log(turk_submit_to, assignment_id, docRef.id);
-                    post(turk_submit_to, "/mturk/externalSubmit", {"assignmentId": assignment_id, "docRefId": docRef.id, "collection": db_collection});
+                    res_map = {"assignmentId": assignment_id, "docRefId": docRef.id, "collection": db_collection};
+                    if(training === true) {
+                        // Remove one as the first sentence is always the default.
+                        res_map["correct_score"] = (correct_count - 1)/(active_story_sentences.length - 1);
+                    }
+                    console.log(turk_submit_to, res_map);
+                    post(turk_submit_to, "/mturk/externalSubmit", res_map);
                 } else {
                     workflow_state = "COMPLETE";
                 }
@@ -370,10 +405,19 @@
 
 <div id="sentence">
     <h4>{active_sentence["text"]}</h4>
+
+    {#if trainer === true && sentence_correct === false}
+    <div id="trainer_feedback">
+    <p></p>
+    <h4>Incorrect answer: {active_sentence["gold_explanation"]}</h4>
+    <p><button on:click={moveNext}>Next</button></p>
+    </div>
+    {/if}
     <p>
     <strong>{active_sentence_index + 1}/{active_story_sentences.length}</strong>
 </p>
 </div>
+
 <div id="sentence_buttons">
 
 {#if active_sentence_index > 0}
@@ -382,7 +426,7 @@
     <button on:click={()=>sentenceChoice(3,"button")}>Same (Space) </button>
     <button  on:click={()=>sentenceChoice(4,"button")}>Increase (K)</button>
     <button on:click={()=>sentenceChoice(5,"button")}>Big Increase (L)</button>
-    {#if active_sentence_index > 1}
+    {#if active_sentence_index > 1 && trainer === false}
       <button on:click={undoAnnotation}>Undo (U)</button>
     {/if}
 
@@ -397,6 +441,11 @@
     <p>
     <strong>Story annotation complete.</strong>
     <p>
+    {#if trainer === true}
+    <p>
+        <strong>Correct score: {correct_count - 1}/{active_story_sentences.length - 1}</strong>
+    </p>
+    {/if}
 </div>
 {/if}
 
