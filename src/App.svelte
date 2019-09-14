@@ -86,6 +86,7 @@
          }
 
          active_sentence_index = Math.min(active_sentence_index + 1, active_story_sentences.length - 1);
+
          active_sentence = active_story_sentences[active_sentence_index];
          last_choice = choice;
 
@@ -290,11 +291,11 @@
     function handleKey(event) {
         if (workflow_state === "ANNOTATE") {
             if  (event.key === "a" || event.key === "A" ) {
-                sentenceChoice(1,"key")
-            }
-            else if  (event.key === "s" || event.key === "S") {
-                sentenceChoice(2,"key")
-            }
+                             sentenceChoice(1,"key")
+                         }
+                         else if  (event.key === "s" || event.key === "S") {
+                             sentenceChoice(2,"key")
+                         }
             else if  (event.key === "k" || event.key === "K") {
                 sentenceChoice(4,"key")
             }
@@ -307,11 +308,27 @@
                 }
             }
             else if  (event.key === "n" || event.key === "N") {
-                sentenceChoice(0,"key")
-                        }
+                if (sentence_correct === true) {
+                    sentenceChoice(0,"key")
+                } else {
+                    moveNext();
+                }
+            }
             else if  (event.key === " ") {
                   sentenceChoice(3,"key")
             }
+        } else if (workflow_state === "TRAINED") {
+            if  (event.key === "n" || event.key === "N") {
+                startInstructions();
+            }
+        } else if (workflow_state === "INSTRUCTIONS") {
+
+            if  (event.key === "v" || event.key === "V" ) {
+                 validateCode();
+             }
+             else if  (event.key === "t" || event.key === "T") {
+                 startTraining();
+             }
         }
     }
     function submitForm()
@@ -343,9 +360,9 @@
 <div id="sentence">
 
 
-    <input type="text" width="25%" placeholder="Enter training code" name = "entry_code" id="entry_code" bind:value={entry_code}>
-    <button on:click={validateCode}>Validate Code</button>
-    <button on:click={startTraining}>Training</button>
+    <input type="text" width="25%" placeholder="Enter task code" name = "entry_code" id="entry_code" bind:value={entry_code}>
+    <button on:click={validateCode}>Validate Code (V)</button>
+    <button on:click={startTraining}>Training (T)</button>
 
     <h2>Story Reading Sentence by Sentence</h2>
     <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
@@ -471,10 +488,10 @@
     <p>Please write down the code and use on the instructions page.</p>
     <h3>The code is {gold_entry_code}</h3>
 {:else}
-    <h3>Sorry but your score is not high enough. Training can be retried by continuing.</h3>
+    <h3>Sorry but your score is not high enough. Training can be retried by pressing Next and restarting on the instructions page.</h3>
 
 {/if}
-  <p><button on:click={startInstructions}>Continue</button></p>
+  <p><button on:click={startInstructions}>Next (N)</button></p>
 
 </div>
 {:else if workflow_state === "ANNOTATE"}
@@ -486,7 +503,7 @@
     <div id="trainer_feedback">
     <p></p>
     <h4>Incorrect answer: {active_sentence["gold_explanation"]}</h4>
-    <p><button on:click={moveNext}>Next</button></p>
+    <p><button on:click={moveNext}>Next (N)</button></p>
     </div>
     {/if}
     <p>
