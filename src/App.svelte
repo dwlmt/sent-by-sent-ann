@@ -25,7 +25,7 @@
       firebase.initializeApp(firebaseConfig);
 
     let db = firebase.firestore();
-    let db_collection = "sentence_annotations_gold_test";
+    let db_collection = "sentence_annotations_pilot";
 
     $: valid_story = true;
 
