@@ -110,12 +110,6 @@
                 annotation_result_map["correct"] =  choice === active_sentence["gold_answer"];
             }
 
-             if (trainer === true) {
-                annotation_result_map["gold_answer"]  = active_sentence["gold_answer"];
-                annotation_result_map["correct"] =  choice === active_sentence["gold_answer"];
-
-             }
-
 
              if (active_story_complete === false) {
                 if (trainer === false) {
@@ -131,6 +125,9 @@
                  correct_count += 1;
                  sentence_correct = true;
                  moveNext();
+             } else if (trainer === true && (Math.abs(active_sentence["gold_answer"] - choice)) === 1) {
+                 correct_count += 0.5;
+                 sentence_correct = false;
              } else{
                  sentence_correct = false;
              }
@@ -482,7 +479,7 @@
 <h2>Training Complete</h2>
 
 <p>Thank you for complete training.</p>
-<p><strong>You got {(correct_count - 1) /(active_story_sentences.length - 1) * 100}% correct, pass mark is {pass_mark * 100.0}%</strong></p>
+<p><strong>You got {((correct_count - 1) /(active_story_sentences.length - 1) * 100).toFixed(2)}% correct, the pass mark is {pass_mark * 100.0}%</strong></p>
 
 {#if (correct_count - 1) /(active_story_sentences.length - 1) >= pass_mark}
     <p>Please write down the code and use on the instructions page.</p>
