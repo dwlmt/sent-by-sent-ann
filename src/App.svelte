@@ -1,5 +1,11 @@
 <script>
     import annotations_source from '../static/annotations_source.json';
+    import annotations_source_gold from '../static/annotations_source_gold.json';
+
+    import Notifications from '@beyonk/svelte-notifications'
+
+    let notifications;
+    let notification_time = 6000;
 
     import firebase from 'firebase/app';
     import 'firebase/auth';
@@ -19,7 +25,7 @@
       firebase.initializeApp(firebaseConfig);
 
     let db = firebase.firestore();
-    let db_collection = "sentence_annotations_sandbox";
+    let db_collection = "sentence_annotations_pilot";
 
     $: valid_story = true;
 
@@ -37,17 +43,28 @@
     for (const s of annotations_source.stories) {
         annotations_lookup[String(s.story_id)] = s;
     }
+    for (const s of annotations_source_gold.stories) {
+            annotations_lookup[String(s.story_id)] = s;
+            console.log(s)
+    }
 
     import { writable } from 'svelte/store';
     export const story_annotations = writable([]);
+    export const training_annotations = writable([]);
 
+    let gold_entry_code = "odisakebazux"
 
 	$: active_story_id = -1;
 	$: code = -1;
 	$: last_choice = 0;
+	$: trainer = false;
+	$: sentence_correct = true;
+	$: correct_count = 0;
 	$: active_story_complete = false;
 	$: workflow_state = "INSTRUCTIONS";
 	$: show_annotations = false;
+	$: entry_code = null;
+	$: pass_mark = 0.0;
 
 	$: start_timer = new Date().getTime();
 	$: whole_task_timer = new Date().getTime();
@@ -55,6 +72,26 @@
 	$: active_story_sentences = [];
     $: active_sentence_index = 0;
     $: active_sentence = null;
+
+    function moveNext() {
+         sentence_correct = true;
+         if (active_sentence_index + 1 === active_story_sentences.length) {
+             active_story_complete = true;
+             if(trainer === false) {
+                 workflow_state = "SUMMARY"
+             } else {
+                 workflow_state = "TRAINED";
+             }
+
+         }
+
+         active_sentence_index = Math.min(active_sentence_index + 1, active_story_sentences.length - 1);
+
+         active_sentence = active_story_sentences[active_sentence_index];
+         last_choice = choice;
+
+         start_timer = new Date().getTime();
+    }
 
     function sentenceChoice(choice, interaction_type="button") {
 
@@ -68,40 +105,52 @@
             annotation_result_map["sentence_len"] = active_sentence["sentence_len"];
             annotation_result_map["interaction_type"] = interaction_type;
 
-             if (active_story_complete === false) {
-                console.log(`Annotations: ${annotation_result_map}`);
-                story_annotations.update(n => n.concat([annotation_result_map]));
-             }
-
-            if (active_sentence_index + 1 === active_story_sentences.length) {
-                active_story_complete = true;
-                workflow_state = "SUMMARY"
+            if (trainer === true) {
+                annotation_result_map["gold_answer"]  = active_sentence["gold_answer"];
+                annotation_result_map["correct"] =  choice === active_sentence["gold_answer"];
             }
 
-            active_sentence_index = Math.min(active_sentence_index + 1, active_story_sentences.length - 1);
-            active_sentence = active_story_sentences[active_sentence_index]
-            last_choice = choice;
 
-            start_timer = new Date().getTime();
+             if (active_story_complete === false) {
+                if (trainer === false) {
+                    console.log(`Annotations: ${annotation_result_map}`);
+                    story_annotations.update(n => n.concat([annotation_result_map]));
+                } else {
+                    console.log(`Training Annotations: ${annotation_result_map}`);
+                    training_annotations.update(n => n.concat([annotation_result_map]));
+                }
+             }
+
+             if (trainer === false || annotation_result_map["correct"] === true) {
+                 correct_count += 1;
+                 sentence_correct = true;
+                 moveNext();
+             } else if (trainer === true && (Math.abs(active_sentence["gold_answer"] - choice)) === 1) {
+                 correct_count += 0.5;
+                 sentence_correct = false;
+             } else{
+                 sentence_correct = false;
+             }
         }
-
     }
 
     function undoAnnotation() {
 
-    let duration = new Date().getTime() - start_timer;
-    if (duration > min_duration){
-         if (active_story_complete === false) {
-                    story_annotations.update(n => {
-                        active_sentence_index -= 1
-                        active_sentence = active_story_sentences[active_sentence_index];
-                        return n.slice(0, -1);
-                    })
-                 }
+        if (trainer === false) {
+            let duration = new Date().getTime() - start_timer;
+            if (duration > min_duration){
+                 if (active_story_complete === false) {
+                            story_annotations.update(n => {
+                                active_sentence_index -= 1
+                                active_sentence = active_story_sentences[active_sentence_index];
+                                return n.slice(0, -1);
+                            })
+                         }
+                }
+
+                start_timer = new Date().getTime();
+
         }
-
-        start_timer = new Date().getTime();
-
     }
 
     function post(path, params, method='post') {
@@ -125,7 +174,15 @@
       form.submit();
     }
 
-    function startStoryAnnotation() {
+    function startInstructions() {
+        workflow_state = "INSTRUCTIONS";
+        active_sentence_index = 0;
+        active_story_complete = false;
+        sentence_correct = true;
+    }
+
+    function startStoryAnnotation(override_code = null) {
+
         let query_params = new URLSearchParams(window.location.search);
 
         let mturk_code = query_params.get("mturkCode");
@@ -139,12 +196,23 @@
              code = query_params.get("code");
         }
 
+        if (override_code != null) {
+            active_story_id = override_code;
+        }
+
+        trainer=override_code < 0;
+
         if (String(active_story_id) in annotations_lookup){
             let story = annotations_lookup[active_story_id];
+
+            if ("trainer" in story && story.trainer === true) {
+                trainer = true;
+                pass_mark = story['pass_mark'];
+            }
             active_story_sentences = story["sentences"];
             active_sentence = active_story_sentences[active_sentence_index];
 
-            if (code === story.code) {
+            if (code === story.code || active_story_id < 0) {
                 workflow_state = "ANNOTATE";
             } else {
                 workflow_state = "INVALID_STORY";
@@ -179,6 +247,7 @@
                 comp_annotations["worker_id"] = worker_id;
             }
             comp_annotations["sentence_annotations"] = $story_annotations;
+            comp_annotations["training_annotations"] = $training_annotations;
             comp_annotations["task_duration_milliseconds"] = new Date().getTime() - whole_task_timer;
 
             console.log(comp_annotations);
@@ -188,8 +257,10 @@
                 console.log("Document written with ID: ", docRef.id);
 
                 if (turk_submit_to != null && turk_submit_to.length > 0) {
-                    console.log(turk_submit_to, assignment_id, docRef.id);
-                    post(turk_submit_to, "/mturk/externalSubmit", {"assignmentId": assignment_id, "docRefId": docRef.id, "collection": db_collection});
+                    res_map = {"assignmentId": assignment_id, "docRefId": docRef.id, "collection": db_collection};
+
+                    console.log(turk_submit_to, res_map);
+                    post(turk_submit_to, "/mturk/externalSubmit", res_map);
                 } else {
                     workflow_state = "COMPLETE";
                 }
@@ -200,14 +271,28 @@
         }
      }
 
+    function startTraining() {
+        console.log("Start training");
+        startStoryAnnotation(-1)
+    }
+
+    function validateCode() {
+        if (gold_entry_code === entry_code) {
+            console.log("Code validated");
+            startStoryAnnotation()
+        } else {
+            notifications.danger("Invalid code, please reenter or complete training to get the code.", notification_time)
+        }
+    }
+
     function handleKey(event) {
         if (workflow_state === "ANNOTATE") {
             if  (event.key === "a" || event.key === "A" ) {
-                sentenceChoice(1,"key")
-            }
-            else if  (event.key === "s" || event.key === "S") {
-                sentenceChoice(2,"key")
-            }
+                             sentenceChoice(1,"key")
+                         }
+                         else if  (event.key === "s" || event.key === "S") {
+                             sentenceChoice(2,"key")
+                         }
             else if  (event.key === "k" || event.key === "K") {
                 sentenceChoice(4,"key")
             }
@@ -220,13 +305,28 @@
                 }
             }
             else if  (event.key === "n" || event.key === "N") {
-                sentenceChoice(0,"key")
-                        }
+                if (sentence_correct === true) {
+                    sentenceChoice(0,"key")
+                } else {
+                    moveNext();
+                }
+            }
             else if  (event.key === " ") {
                   sentenceChoice(3,"key")
             }
-        }
+        } else if (workflow_state === "TRAINED") {
+            if  (event.key === "n" || event.key === "N") {
+                startInstructions();
+            }
+        } else if (workflow_state === "INSTRUCTIONS") {
 
+            if  (event.key === "v" || event.key === "V" ) {
+                 validateCode();
+             }
+             else if  (event.key === "t" || event.key === "T") {
+                 startTraining();
+             }
+        }
     }
     function submitForm()
     {
@@ -239,11 +339,10 @@
 </style>
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:min_text_length0,min_text_length0italic,700,700italic">
-
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
-
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
 
+<Notifications bind:this={notifications} />
 <svelte:window on:keyup={handleKey}/>
 
 {#if workflow_state === "INVALID_STORY"}
@@ -258,12 +357,20 @@
 <div id="sentence">
 
 
-      <button on:click={startStoryAnnotation}>Start</button>
+    <input type="text" width="25%" placeholder="Enter task code" name = "entry_code" id="entry_code" bind:value={entry_code}>
+    <button on:click={validateCode}>Validate Code (V)</button>
+    <button on:click={startTraining}>Training (T)</button>
 
     <h2>Story Reading Sentence by Sentence</h2>
     <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
     <emph>5-7 minutes</emph>.Judge each sentence on how the dramatic tension has changed over as felt by the main characters in the story, not
     what you as a reader feel. This tension is the excitement or anxiousness over what will happen to the characters next, it is antipation.</p>
+
+    <p>
+        For the first HIT there will be an additional training step to pass. This is take about <strong>5 minutes</strong>. After this
+        you will receive a code which you cane enter in the code box to bypass the training for subsequent HITS.
+    </p>
+
     <p>
      <strong>An Example:</strong> Take a dramatic moment in a story main such as a character that needs to walk along a dangerous cliff path. When the character first realises they will encounter danger the tension
      will rise. As they are on the cliff ledge then tension will increase further. Other details such as falling rocks or slips will increase the tension further to a peak. When the cliff edge
@@ -364,30 +471,59 @@
 
      </form>
 </div>
+
+{:else if workflow_state === "TRAINED"}
+
+<div id="training_summary">
+
+<h2>Training Complete</h2>
+
+<p>Thank you for complete training.</p>
+<p><strong>You got {((correct_count - 1) /(active_story_sentences.length - 1) * 100).toFixed(2)}% correct, the pass mark is {pass_mark * 100.0}%</strong></p>
+
+{#if (correct_count - 1) /(active_story_sentences.length - 1) >= pass_mark}
+    <p>Please write down the code and use on the instructions page.</p>
+    <h3>The code is {gold_entry_code}</h3>
+{:else}
+    <h3>Sorry but your score is not high enough. Training can be retried by pressing Next and restarting on the instructions page.</h3>
+
+{/if}
+  <p><button on:click={startInstructions}>Next (N)</button></p>
+
+</div>
 {:else if workflow_state === "ANNOTATE"}
 
-<h1>Story: {active_story_id} </h1>
-
 <div id="sentence">
-    <h4>{active_sentence["text"]}</h4>
+    <h3>{active_sentence["text"]}</h3>
+
+    {#if trainer === true && sentence_correct === false}
+    <div id="trainer_feedback">
+    <p></p>
+    <h4>Incorrect answer: {active_sentence["gold_explanation"]}</h4>
+    <p><button on:click={moveNext}>Next (N)</button></p>
+    </div>
+    {/if}
     <p>
     <strong>{active_sentence_index + 1}/{active_story_sentences.length}</strong>
 </p>
 </div>
+
 <div id="sentence_buttons">
 
-{#if active_sentence_index > 0}
+{#if active_sentence_index > 0 && sentence_correct === true}
     <button on:click={()=>sentenceChoice(1,"button")}>Big Decrease (A)</button>
     <button on:click={()=>sentenceChoice(2,"button")}>Decrease (S)</button>
     <button on:click={()=>sentenceChoice(3,"button")}>Same (Space) </button>
     <button  on:click={()=>sentenceChoice(4,"button")}>Increase (K)</button>
     <button on:click={()=>sentenceChoice(5,"button")}>Big Increase (L)</button>
-    {#if active_sentence_index > 1}
+    {#if active_sentence_index > 1 && trainer === false}
       <button on:click={undoAnnotation}>Undo (U)</button>
     {/if}
 
 {:else}
-      <button on:click={()=>sentenceChoice(0,"button")}>Next (N)</button>
+      {#if  sentence_correct === true}
+          <button on:click={()=>sentenceChoice(0,"button")}>Next (N)</button>
+      {/if}
 {/if}
 </div>
 
@@ -397,6 +533,7 @@
     <p>
     <strong>Story annotation complete.</strong>
     <p>
+
 </div>
 {/if}
 
