@@ -160,16 +160,22 @@
       const form = document.createElement('form');
       form.method = method;
       form.action = path;
+      form.id='mturk_form';
+      form.name='mturk_form';
 
       for (const key in params) {
-          const hiddenField = document.createElement('input');
-          hiddenField.type = 'hidden';
-          hiddenField.name = key;
-          hiddenField.value = params[key];
+          if (params.hasOwnProperty(key)) {
+              const hiddenField = document.createElement('input');
+              hiddenField.type = 'hidden';
+              hiddenField.name = key;
+              hiddenField.id = key;
+              hiddenField.value = params[key];
 
-          form.appendChild(hiddenField);
+              form.appendChild(hiddenField);
+          }
       }
 
+      console.log(form);
       document.body.appendChild(form);
       form.submit();
     }
