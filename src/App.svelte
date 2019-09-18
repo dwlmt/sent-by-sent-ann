@@ -363,11 +363,14 @@
 
     <h2>Story Reading Sentence by Sentence</h2>
     <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
-    <emph>5-7 minutes</emph>.Judge each sentence on how the dramatic tension has changed over as felt by the main characters in the story, not
-    what you as a reader feel. This tension is the excitement or anxiousness over what will happen to the characters next, it is antipation.</p>
+    <emph>5-7 minutes</emph>. Judge each sentence on how the dramatic tension has changed over as felt by the main characters in the story, not
+    what you as a reader feel. This tension is the excitement or anxiousness over what will happen to the characters next, it is anticipation.</p>
+
+    <p>Some stories will contain violent, sexual or otherwise possibly troubling content. Do not proceed is this is a concern.
+    </p>
 
     <p>
-        For the first HIT there will be an additional training step to pass. This is take about <strong>5 minutes</strong>. After this
+        For the first HIT there will be an additional training step to pass. This will take about <strong>5 minutes</strong>. After this
         you will receive a code which you cane enter in the code box to bypass the training for subsequent HITS.
     </p>
 
