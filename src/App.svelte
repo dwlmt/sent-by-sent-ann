@@ -266,7 +266,7 @@
                     let res_map = {"assignmentId": assignment_id, "docRefId": docRef.id, "collection": db_collection};
 
                     console.log(turk_submit_to, res_map);
-                    post(turk_submit_to, "/mturk/externalSubmit", res_map);
+                    post(turk_submit_to + "/mturk/externalSubmit", res_map);
                 } else {
                     workflow_state = "COMPLETE";
                 }
