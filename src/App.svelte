@@ -366,10 +366,8 @@
     <emph>5-7 minutes</emph>. Judge each sentence on how the dramatic tension has changed over as felt by the main characters in the story, not
     what you as a reader feel. This tension is the excitement or anxiousness over what will happen to the characters next, it is anticipation.</p>
 
-    <p>Some stories will contain violent, sexual or otherwise possibly troubling content. Do not proceed is this is a concern.
-    </p>
-
     <p>
+        Some stories will contain violent, sexual or otherwise possibly troubling content. Do not proceed if this is a concern.
         For the first HIT there will be an additional training step to pass. This will take about <strong>5 minutes</strong>. After this
         you will receive a code which you cane enter in the code box to bypass the training for subsequent HITS.
     </p>
