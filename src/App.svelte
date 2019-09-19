@@ -37,7 +37,7 @@
     let hit_id = null;
     let turk_submit_to = null;
     let worker_id = null;
-    let min_duration = 500;
+    let min_duration_per_word = 100;
 
     let annotations_lookup = new Map();
     for (const s of annotations_source.stories) {
@@ -97,7 +97,7 @@
 
         let duration = new Date().getTime() - start_timer;
 
-        if (duration > min_duration){
+        if (duration > (min_duration_per_word * active_sentence["sentence_len"])){
 
             let annotation_result_map = {"story_id": active_story_id, "suspense": choice, "duration_milliseconds": duration};
             annotation_result_map["sentence_num"] = active_sentence["sentence_num"];
