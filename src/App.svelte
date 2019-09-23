@@ -376,7 +376,7 @@
      </p>
      <p>
         For the first HIT there will be an additional training step to pass. This will take about 5 minutes. After this
-        you will receive a code which you can enter in the code box to bypass the training for subsequent HITS.
+        you will receive a code which you can enter in the code box to bypass the training for subsequent HITS. Other stories are in separate HITS, please search for "Story dramatic tension, reading sentence by sentence" to find them. The training completion code will work for all related HITS.
      </p>
 
     <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
