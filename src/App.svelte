@@ -372,9 +372,12 @@
 
     <p>
         <strong>Some stories will contain violent, sexual or otherwise possibly troubling content. Do not proceed if this is a concern.
+    </strong>
+     </p>
+     <p>
         For the first HIT there will be an additional training step to pass. This will take about 5 minutes. After this
         you will receive a code which you can enter in the code box to bypass the training for subsequent HITS.</strong>
-        </p>
+     </p>
 
     <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
     <emph>5-7 minutes</emph>. Judge each sentence on
@@ -384,12 +387,12 @@
      <p>Increasing levels of each of the following increase the level of dramatic tension:</p>
             <ul>
              <li><strong>Uncertainty: </strong> How uncertain are the characters involved about what will happen next? Put yourself in the characters shoes; judge the change in the tension based on how the characters perceive the situation.  </li>
-             <li><strong>Significance: </strong> How significant are the consequences of what will happen to the central characters of the story.</li>
+             <li><strong>Significance: </strong> How significant are the consequences of what will happen to the central characters of the story?</li>
             </ul>
      <p>
 
     <p>
-     <strong>An Example:</strong> Take a dramatic moment in a story main such as a character that needs to walk along a dangerous cliff path. When the character first realises they will encounter danger the tension
+     <strong>An Example:</strong> Take a dramatic moment in a story such as a character that needs to walk along a dangerous cliff path. When the character first realises they will encounter danger the tension
      will rise, then tension will increase further. Other details such as falling rocks or slips will increase the tension further to a peak. When the cliff edge
      has been navigated safely the tension will drop. The pattern will be the same with a dramatic event such as a fight, argument, accident, romantic moment, where the tension will rise to a peak
      and then fall away as the tension is resolved.
