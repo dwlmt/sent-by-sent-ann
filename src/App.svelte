@@ -368,15 +368,25 @@
     <button on:click={startTraining}>Training (T)</button>
 
     <h2>Story Reading Sentence by Sentence</h2>
-    <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
-    <emph>5-7 minutes</emph>. Judge each sentence on how the dramatic tension has changed over as felt by the main characters in the story, not
-    what you as a reader feel. This tension is the excitement or anxiousness over what will happen to the characters next, it is anticipation.</p>
 
     <p>
         Some stories will contain violent, sexual or otherwise possibly troubling content. Do not proceed if this is a concern.
         For the first HIT there will be an additional training step to pass. This will take about <strong>5 minutes</strong>. After this
         you will receive a code which you cane enter in the code box to bypass the training for subsequent HITS.
-    </p>
+        </p>
+
+    <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
+    <emph>5-7 minutes</emph>. Judge each sentence on
+    how the dramatic tension has changed over as felt by the main characters in the story, not
+    what you as a reader feel. This tension is the excitement or anxiousness over what will happen to the characters next, it is anticipation.</p>
+
+     <p>Increasing levels of each of the following increase the level of dramatic tension:</p>
+            <ul>
+             <li><strong>Uncertainty:</strong> How uncertain are the characters involved about what will happen next? Put yourself in the characters shoes; judge the change in the tension based on how the characters perceive the situation.  </li>
+             <li><strong>Significance:</strong>How significant are the consequences of what will happen to the central characters of the story.</li>
+            </ul>
+
+        <p>
 
     <p>
      <strong>An Example:</strong> Take a dramatic moment in a story main such as a character that needs to walk along a dangerous cliff path. When the character first realises they will encounter danger the tension
@@ -385,11 +395,20 @@
      and then fall away as the tension is resolved.
      </p>
 
-     <p>Increasing levels of each of the following increase the level of dramatic tension:</p>
-        <ul>
-         <li><strong>Uncertainty:</strong> How uncertain are the characters involved about what will happen next? Put yourself in the characters shoes; judge the change in the tension based on how the characters perceive the situation.  </li>
-         <li><strong>Significance:</strong>How significant are the consequences of what will happen to the central characters of the story.</li>
-        </ul>
+      <ol>
+        <li><strong>Uncertainty:</strong>The girl hears a noise and goes down to the cellar to investigate.</li>
+        <li><strong>Character Uncertainty:</strong>A man carrying an axe crawls through the small cellar window. The girl hears a noise and goes down to the cellar to investigate.</li>
+        <li><strong>Reader Uncertainty:</strong>A man carrying an axe crawls through the small cellar window. The girl hears a noise and goes down to the cellar to investigate. He finds the girl and kisses her.</li>
+      </ol>
+
+    <p>
+    The previous example of different kinds of uncertainty. In example (1) both the reader and and the character are unsure of the noise and it creates dramatic tension. In example (2) the reader
+        is aware something bad may happen but the character is ignorant of what; the tension is created by the reader knowing and the character being unaware. In (3) the kiss is surprising the the reader.
+        It wasn't what was expected, and there is a mystery for the reader, the dramatic tension is created by the uncertainty over what the relationship between the axeman and the girl is. For this
+        task you are considering the characters perspective and so (1) and (2). For (3) the tension reduces at the end as they kiss as from the girls point of view she knows the man and the uncertainty and significance
+        are reduced even if you as a reader are more in intrigued by what will happen next.
+    </p>
+
     <p>Keyboard shortcuts are shown in brackets and will enable you to speed up the annotation process.
     The scale has 5 choices:
     </p>
