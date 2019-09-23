@@ -185,6 +185,7 @@
         active_sentence_index = 0;
         active_story_complete = false;
         sentence_correct = true;
+        correct_count = 0;
     }
 
     function startStoryAnnotation(override_code = null) {
@@ -370,50 +371,37 @@
     <h2>Story Reading Sentence by Sentence</h2>
 
     <p>
-        Some stories will contain violent, sexual or otherwise possibly troubling content. Do not proceed if this is a concern.
-        For the first HIT there will be an additional training step to pass. This will take about <strong>5 minutes</strong>. After this
-        you will receive a code which you cane enter in the code box to bypass the training for subsequent HITS.
+        <strong>Some stories will contain violent, sexual or otherwise possibly troubling content. Do not proceed if this is a concern.
+        For the first HIT there will be an additional training step to pass. This will take about 5 minutes. After this
+        you will receive a code which you can enter in the code box to bypass the training for subsequent HITS.</strong>
         </p>
 
     <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
     <emph>5-7 minutes</emph>. Judge each sentence on
-    how the dramatic tension has changed over as felt by the main characters in the story, not
-    what you as a reader feel. This tension is the excitement or anxiousness over what will happen to the characters next, it is anticipation.</p>
+    how the dramatic tension has changed as felt by the main characters in the story, not
+    what you as a reader feel. Dramatic tension is the excitement or anxiousness over what will happen to the characters next, it is anticipation.</p>
 
      <p>Increasing levels of each of the following increase the level of dramatic tension:</p>
             <ul>
-             <li><strong>Uncertainty:</strong> How uncertain are the characters involved about what will happen next? Put yourself in the characters shoes; judge the change in the tension based on how the characters perceive the situation.  </li>
-             <li><strong>Significance:</strong>How significant are the consequences of what will happen to the central characters of the story.</li>
+             <li><strong>Uncertainty: </strong> How uncertain are the characters involved about what will happen next? Put yourself in the characters shoes; judge the change in the tension based on how the characters perceive the situation.  </li>
+             <li><strong>Significance: </strong> How significant are the consequences of what will happen to the central characters of the story.</li>
             </ul>
-
-        <p>
+     <p>
 
     <p>
      <strong>An Example:</strong> Take a dramatic moment in a story main such as a character that needs to walk along a dangerous cliff path. When the character first realises they will encounter danger the tension
-     will rise. As they are on the cliff ledge then tension will increase further. Other details such as falling rocks or slips will increase the tension further to a peak. When the cliff edge
+     will rise, then tension will increase further. Other details such as falling rocks or slips will increase the tension further to a peak. When the cliff edge
      has been navigated safely the tension will drop. The pattern will be the same with a dramatic event such as a fight, argument, accident, romantic moment, where the tension will rise to a peak
      and then fall away as the tension is resolved.
      </p>
 
-      <ol>
-        <li><strong>Uncertainty:</strong>The girl hears a noise and goes down to the cellar to investigate.</li>
-        <li><strong>Character Uncertainty:</strong>A man carrying an axe crawls through the small cellar window. The girl hears a noise and goes down to the cellar to investigate.</li>
-        <li><strong>Reader Uncertainty:</strong>A man carrying an axe crawls through the small cellar window. The girl hears a noise and goes down to the cellar to investigate. He finds the girl and kisses her.</li>
-      </ol>
-
-    <p>
-    The previous example of different kinds of uncertainty. In example (1) both the reader and and the character are unsure of the noise and it creates dramatic tension. In example (2) the reader
-        is aware something bad may happen but the character is ignorant of what; the tension is created by the reader knowing and the character being unaware. In (3) the kiss is surprising the the reader.
-        It wasn't what was expected, and there is a mystery for the reader, the dramatic tension is created by the uncertainty over what the relationship between the axeman and the girl is. For this
-        task you are considering the characters perspective and so (1) and (2). For (3) the tension reduces at the end as they kiss as from the girls point of view she knows the man and the uncertainty and significance
-        are reduced even if you as a reader are more in intrigued by what will happen next.
-    </p>
-
-    <p>Keyboard shortcuts are shown in brackets and will enable you to speed up the annotation process.
-    The scale has 5 choices:
+    <p>You will be presented with one sentence at a time. Once you have read
+        the sentence, you will press one of five keys to judge the increase or
+        decrease in dramatic tension that this sentence caused. Use will use
+        five levels (with keyboard shortcuts in brackets):
     </p>
     <ul>
-      <li><strong>Big Decrease (A):</strong> A sudden dramatic decrease in dramatic tension of the situation. In the cliff example the person reaching the other side safely.</li>
+      <li><strong>Big Decrease (A):</strong> A sudden decrease in dramatic tension of the situation. In the cliff example the person reaching the other side safely.</li>
       <li><strong>Decrease (S):</strong> A slow decrease in the level of tension, a more gradual drop. For example the cliff walker sees an easier route out. </li>
       <li><strong>Same (Space):</strong> Stays at a similar level. In the cliff example an ongoing description of the event.</li>
       <li><strong>Increase (K):</strong> A gradual increase in the tension. Loose rocks fall nearby the cliff walker.</li>
@@ -426,38 +414,35 @@
 
      <table>
         <tr><th>Judgement</th><th>Sentence Number</th><th>Text</th></tr>
-        <tr><td>NA</td><td>0</td><td>Clancy Marguerian , 154 , private first class of the 150 + army , sits in his foxhole .</td></tr>
-        <tr><td>Increase</td><td>1</td><td>Tired cold , wet and hungry , the only thing preventing him from laying down his rifle and walking towards the enemy lines in surrender is the knowledge that however bad he has it here , life as a 50 - 100 POW is surely much worse .</td></tr>
-        <tr><td>Increase</td><td>2</td><td>He &#39;s fighting to keep his eyes open and his rifle ready when the mortar shells start landing near him .</td></tr>
-        <tr><td>Same</td><td>3</td><td>He hunkers lower .</td></tr>
-        <tr><td>Increase</td><td>4</td><td>After a few minutes under the barrage , Marguerian hears hurried footsteps , a grunt , and a thud as a soldier leaps into the foxhole .</td></tr>
-        <tr><td>Same</td><td>5</td><td>The man &#39;s uniform is tan , he must be a 50 - 100 .</td></tr>
+        <tr><td>NA</td><td>0</td><td>Clancy Marguerian, 154, private first class of the 150 + army , sits in his foxhole.</td></tr>
+        <tr><td>Increase</td><td>1</td><td>Tired cold, wet and hungry, the only thing preventing him from laying down his rifle and walking towards the enemy lines in surrender is the knowledge that however bad he has it here, life as a 50 - 100 POW is surely much worse .</td></tr>
+        <tr><td>Increase</td><td>2</td><td>He&#39;s fighting to keep his eyes open and his rifle ready when the mortar shells start landing near him.</td></tr>
+        <tr><td>Same</td><td>3</td><td>He hunkers lower.</td></tr>
+        <tr><td>Increase</td><td>4</td><td>After a few minutes under the barrage, Marguerian hears hurried footsteps, a grunt, and a thud as a soldier leaps into the foxhole.</td></tr>
+        <tr><td>Same</td><td>5</td><td>The man&#39;s uniform is tan , he must be a 50 - 100 .</td></tr>
         <tr><td>Big Increase</td><td>6</td><td>The two men snarl and grab at eachother , grappling in the small foxhole .</td></tr>
-        <tr><td>Same</td><td>7</td><td>Abruptly , their faces come together .</td></tr>
-        <tr><td>Decrease</td><td>8</td><td>`` Clancy ? &#39;&#39;</td></tr>
-        <tr><td>Decrease</td><td>9</td><td>`` Rob ? &#39;&#39;</td></tr>
-        <tr><td>Big Decrease</td><td>10</td><td>Rob Hall , 97 , Corporal in the 50 - 100 army grins , as the situation turns from life or death struggle , to a meeting of two college friends .</td></tr>
-        <tr><td>Decrease</td><td>11</td><td>He lets go of Marguerian &#39;s collar .</td></tr>
-        <tr><td>Same</td><td>12</td><td>`` Holy shit Clancy , you &#39;re the last person I expected to see here &#39;&#39;</td></tr>
-        <tr><td>Same</td><td>13</td><td>`` Yeah &#39;&#39; `` Shit man , I did n&#39;t think I &#39;d ever see &#39;</td></tr>
-        <tr><td>Same</td><td>14</td><td>Mr .</td></tr>
-        <tr><td>Decrease</td><td>15</td><td>volunteers every saturday morning at the food shelf &#39; , not after The Reorganization at least &#39;&#39;</td></tr>
-        <tr><td>Same</td><td>17</td><td>Yeah Rob , it is something is n&#39;t it &#39;&#39;</td></tr>
-        <tr><td>Decrease</td><td>18</td><td>`` Man , I &#39; m sorry</td></tr>
-        <tr><td>Same</td><td>19</td><td>I tried to kill you there ,</td></tr>
-        <tr><td>Same</td><td>20</td><td>hey , I heard you guys were out of food , here , you can share my dinner &#39;&#39; Clancy marvels , even after all this : The Reorganization , the coalitions , the war , Rob is still his old , chatty self .</td></tr>
-        <tr><td>Same</td><td>21</td><td>The two men sit , Rob chatting away , Clancy forcing out pleasantries .</td></tr>
-        <tr><td>Same</td><td>22</td><td>They pass Rob &#39;s rations between them .</td></tr>
-        <tr><td>Increase</td><td>23</td><td>`` Clancy my man , I heard a group of terrorist 5 &#39;s took have formed some kind of cult , and they &#39;re rallying all the &lt; 50 in their own coalition &#39;&#39;</td></tr>
-        <tr><td>Same</td><td>24</td><td>`` Oh yeah ? &#39;&#39;</td></tr>
-        <tr><td>Decrease</td><td>25</td><td>`` Yeah , I mean , that sucks and everything , cause those are some scary dudes , but I heard that there &#39;s going to be a truce between our countries in a few days , why do n&#39;t we just hang out here , pretty soon we wo n&#39;t even be enemies anymore ! &#39;&#39;</td></tr>
-        <tr><td>Same</td><td>26</td><td>`` Yeah , Rob , that sounds like a plan &#39;&#39;</td></tr>
-        <tr><td>Increase</td><td>27</td><td>`` Man , I &#39; m so glad I found you again , in a few days , this war will be over , and things will be cool between us and , hey , remember Sarah ?</td></tr>
-        <tr><td>Same</td><td>28</td><td>I heard she &#39;s a 151 , maybe I &#39;ll look her up , I &#39;ll be sure to visit you too once I can get a pass to sector 150 - 155 , it &#39;ll probably be tough though , even before the war</td></tr>
-        <tr><td>Same</td><td>29</td><td>, you had to do sooo much paperwork to be allowed to visit , I wonder if passes will even be reinstated after the truce ends , hey , did I ever tell you about the time ... &#39;&#39;</td></tr>
-        <tr><td>Increase</td><td>30</td><td>Rob babbles as he dozes off , grinning up at Clancy .</td></tr>
-        <tr><td>Big Increase</td><td>31</td><td>When Clancy is sure that his friend is asleep , he slits Rob &#39;s throat with his bayonet .</td></tr>
-        <tr><td>Decrease</td><td>32</td><td>Clancy climbs out of the foxhole , and stumbles his way back to battalion HQ .</td></tr></table>
+        <tr><td>Same</td><td>7</td><td>Abruptly, their faces come together.</td></tr>
+        <tr><td>Decrease</td><td>8</td><td>``Clancy?&#39;&#39;</td></tr>
+        <tr><td>Decrease</td><td>9</td><td>``Rob?&#39;&#39;</td></tr>
+        <tr><td>Big Decrease</td><td>10</td><td>Rob Hall, 97, Corporal in the 50 - 100 army grins, as the situation turns from life or death struggle, to a meeting of two college friends.</td></tr>
+        <tr><td>Decrease</td><td>11</td><td>He lets go of Marguerian&#39;s collar.</td></tr>
+        <tr><td>Same</td><td>12</td><td>`` Holy shit Clancy , you&#39;re the last person I expected to see here &#39;&#39;</td></tr>
+        <tr><td>Same</td><td>13</td><td>`` Yeah &#39;&#39; `` Shit man , I didn&#39;t think I&#39;d ever see Mr. volunteers every saturday morning at the food shelf&#39; , not after The Reorganization at least &#39;&#39;</td></tr>
+        <tr><td>Same</td><td>14</td><td>Yeah Rob , it is something is n&#39;t it &#39;&#39;</td></tr>
+        <tr><td>Decrease</td><td>15</td><td>`` Man , I &#39;m sorry, I tried to kill you there.</td></tr>
+        <tr><td>Same</td><td>16</td><td>Hey , I heard you guys were out of food , here , you can share my dinner &#39;&#39; Clancy marvels , even after all this : The Reorganization , the coalitions , the war , Rob is still his old , chatty self .</td></tr>
+        <tr><td>Same</td><td>17</td><td>The two men sit , Rob chatting away , Clancy forcing out pleasantries .</td></tr>
+        <tr><td>Same</td><td>18</td><td>They pass Rob&#39;s rations between them .</td></tr>
+        <tr><td>Increase</td><td>19</td><td>`` Clancy my man , I heard a group of terrorist 5 &#39;s took have formed some kind of cult , and they&#39;re rallying all the &lt; 50 in their own coalition &#39;&#39;</td></tr>
+        <tr><td>Same</td><td>20</td><td>`` Oh yeah? &#39;&#39;</td></tr>
+        <tr><td>Decrease</td><td>21</td><td>`` Yeah , I mean , that sucks and everything , cause those are some scary dudes , but I heard that there&#39;s going to be a truce between our countries in a few days , why do n&#39;t we just hang out here , pretty soon we wo n&#39;t even be enemies anymore ! &#39;&#39;</td></tr>
+        <tr><td>Same</td><td>22</td><td>`` Yeah , Rob , that sounds like a plan&#39;&#39;</td></tr>
+        <tr><td>Increase</td><td>23</td><td>`` Man , I&#39;m so glad I found you again , in a few days , this war will be over , and things will be cool between us and , hey, remember Sarah ?</td></tr>
+        <tr><td>Same</td><td>24</td><td>I heard she&#39;s a 151 , maybe I&#39;ll look her up , I&#39;ll be sure to visit you too once I can get a pass to sector 150 - 155, it&#39;ll probably be tough though , even before the war</td></tr>
+        <tr><td>Same</td><td>25</td><td>, you had to do sooo much paperwork to be allowed to visit , I wonder if passes will even be reinstated after the truce ends, hey, did I ever tell you about the time ... &#39;&#39;</td></tr>
+        <tr><td>Increase</td><td>26</td><td>Rob babbles as he dozes off, grinning up at Clancy .</td></tr>
+        <tr><td>Big Increase</td><td>27</td><td>When Clancy is sure that his friend is asleep, he slits Rob&#39;s throat with his bayonet .</td></tr>
+        <tr><td>Decrease</td><td>28</td><td>Clancy climbs out of the foxhole, and stumbles his way back to battalion HQ .</td></tr></table>
 
 
 </div>
