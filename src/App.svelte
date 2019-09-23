@@ -450,15 +450,6 @@
 <div id="sentence">
     <h2>Review Questions</h2>
 
-        <p>The following review questions are assess the story overall:</p>
-        <ul>
-          <li><strong>Summary: </strong> Write a short one or two sentence summary of what the story is about. This should mention the main character(s),
-          plot points, goals or obstacles that the characters overcame in the story.</li>
-          <li><strong>Review:</strong> Write a couple of sentences reviewing the story saying what you like or don't like about it and why. For either mention if it is the topic, characters, plot,
-          etc that draw you into the story or find uninteresting</li>
-          <li><strong>Rating:</strong> A 5 point scale from very uninteresting to very interesting. Just go with your own judgement on how interesting the story is.</li>
-        </ul>
-
     <p>
     <h4>Please write a summary of the story in one or two sentences.</h4>
     <form onsubmit="event.preventDefault();">
