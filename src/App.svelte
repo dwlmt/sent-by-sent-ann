@@ -380,7 +380,7 @@
      </p>
 
     <p>  You will read a short story and for each sentence be asked to assess how the dramatic tension increases, decreases or stays the same. Each story will take an estimated
-    <emph>5-7 minutes</emph>. Judge each sentence on
+    <emph>8-10 minutes</emph>. Judge each sentence on
     how the dramatic tension has changed as felt by the main characters in the story, not
     what you as a reader feel. Dramatic tension is the excitement or anxiousness over what will happen to the characters next, it is anticipation.</p>
 
