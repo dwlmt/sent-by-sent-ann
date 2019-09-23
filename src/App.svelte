@@ -428,21 +428,20 @@
         <tr><td>Decrease</td><td>11</td><td>He lets go of Marguerian&#39;s collar.</td></tr>
         <tr><td>Same</td><td>12</td><td>`` Holy shit Clancy , you&#39;re the last person I expected to see here &#39;&#39;</td></tr>
         <tr><td>Same</td><td>13</td><td>`` Yeah &#39;&#39; `` Shit man , I didn&#39;t think I&#39;d ever see Mr. volunteers every saturday morning at the food shelf&#39; , not after The Reorganization at least &#39;&#39;</td></tr>
-        <tr><td>Same</td><td>14</td><td>Yeah Rob , it is something is n&#39;t it &#39;&#39;</td></tr>
-        <tr><td>Decrease</td><td>15</td><td>`` Man , I &#39;m sorry, I tried to kill you there.</td></tr>
-        <tr><td>Same</td><td>16</td><td>Hey , I heard you guys were out of food , here , you can share my dinner &#39;&#39; Clancy marvels , even after all this : The Reorganization , the coalitions , the war , Rob is still his old , chatty self .</td></tr>
+        <tr><td>Same</td><td>14</td><td>``Yeah Rob , it is something isn&#39;t it &#39;&#39;</td></tr>
+        <tr><td>Decrease</td><td>15</td><td>`` Man , I&#39;m sorry, I tried to kill you there&#39;&#39;.</td></tr>
+        <tr><td>Same</td><td>16</td><td>``Hey , I heard you guys were out of food , here , you can share my dinner &#39;&#39; Clancy marvels , even after all this : The Reorganization , the coalitions , the war , Rob is still his old , chatty self .</td></tr>
         <tr><td>Same</td><td>17</td><td>The two men sit , Rob chatting away , Clancy forcing out pleasantries .</td></tr>
         <tr><td>Same</td><td>18</td><td>They pass Rob&#39;s rations between them .</td></tr>
-        <tr><td>Increase</td><td>19</td><td>`` Clancy my man , I heard a group of terrorist 5 &#39;s took have formed some kind of cult , and they&#39;re rallying all the &lt; 50 in their own coalition &#39;&#39;</td></tr>
+        <tr><td>Increase</td><td>19</td><td>`` Clancy my man , I heard a group of terrorist 5&#39;s took have formed some kind of cult , and they&#39;re rallying all the &lt; 50 in their own coalition &#39;&#39;</td></tr>
         <tr><td>Same</td><td>20</td><td>`` Oh yeah? &#39;&#39;</td></tr>
         <tr><td>Decrease</td><td>21</td><td>`` Yeah , I mean , that sucks and everything , cause those are some scary dudes , but I heard that there&#39;s going to be a truce between our countries in a few days , why do n&#39;t we just hang out here , pretty soon we wo n&#39;t even be enemies anymore ! &#39;&#39;</td></tr>
         <tr><td>Same</td><td>22</td><td>`` Yeah , Rob , that sounds like a plan&#39;&#39;</td></tr>
         <tr><td>Increase</td><td>23</td><td>`` Man , I&#39;m so glad I found you again , in a few days , this war will be over , and things will be cool between us and , hey, remember Sarah ?</td></tr>
-        <tr><td>Same</td><td>24</td><td>I heard she&#39;s a 151 , maybe I&#39;ll look her up , I&#39;ll be sure to visit you too once I can get a pass to sector 150 - 155, it&#39;ll probably be tough though , even before the war</td></tr>
-        <tr><td>Same</td><td>25</td><td>, you had to do sooo much paperwork to be allowed to visit , I wonder if passes will even be reinstated after the truce ends, hey, did I ever tell you about the time ... &#39;&#39;</td></tr>
-        <tr><td>Increase</td><td>26</td><td>Rob babbles as he dozes off, grinning up at Clancy .</td></tr>
-        <tr><td>Big Increase</td><td>27</td><td>When Clancy is sure that his friend is asleep, he slits Rob&#39;s throat with his bayonet .</td></tr>
-        <tr><td>Decrease</td><td>28</td><td>Clancy climbs out of the foxhole, and stumbles his way back to battalion HQ .</td></tr></table>
+        <tr><td>Same</td><td>24</td><td>I heard she&#39;s a 151 , maybe I&#39;ll look her up , I&#39;ll be sure to visit you too once I can get a pass to sector 150 - 155, it&#39;ll probably be tough though , even before the war,  you had to do sooo much paperwork to be allowed to visit , I wonder if passes will even be reinstated after the truce ends, hey, did I ever tell you about the time ... &#39;&#39;</td></tr>
+        <tr><td>Increase</td><td>25</td><td>Rob babbles as he dozes off, grinning up at Clancy .</td></tr>
+        <tr><td>Big Increase</td><td>26</td><td>When Clancy is sure that his friend is asleep, he slits Rob&#39;s throat with his bayonet .</td></tr>
+        <tr><td>Decrease</td><td>27</td><td>Clancy climbs out of the foxhole, and stumbles his way back to battalion HQ .</td></tr></table>
 
 
 </div>
